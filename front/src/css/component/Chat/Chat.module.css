@@ -1,0 +1,96 @@
+/* ChatBot.module.css */
+
+.chatbotContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.chatHistory {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ChatBot 메시지 왼쪽 정렬 */
+}
+
+.userInput {
+    display: flex;
+    align-items: center;
+}
+
+.userInput input{
+    width: 310px;
+    height: 40px;
+}
+
+.userInput button{
+    background-color: #a38ced;
+    border: 1px solid #99959e;
+    color: white;
+    padding: 3px;
+    height: 40px;
+
+}
+
+.message {
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    max-width: 80%;
+}
+
+.user {
+    background-color: #a38ced;
+    color: white;
+    align-self: flex-end;
+}
+
+.user::after {
+    border-top:15px solid #a38ced;
+    border-left: 0px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 0px solid transparent;
+    content:"";
+    position:absolute;
+    top:3px;
+    right:-8px;
+
+}
+
+.bot {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.bot::after { /* 변경: ::after를 사용하며 말풍선의 오른쪽 하단에 꼬리 생성 */
+    border-top:15px solid #f0f0f0;
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    content:"";
+    position:absolute;
+    top:3px;
+    left:-8px;
+
+}
+
+.qnaList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    background: #f0f0f0;
+    /*color: white;*/
+
+}
+
+.qnaItem {
+    cursor: pointer;
+    padding: 4px;
+    width: 380px;
+    margin-bottom: 5px;
+    /*background: #f0f0f0;*/
+
+}

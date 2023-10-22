@@ -1,0 +1,57 @@
+
+
+.List{
+    margin-bottom: 5%;
+
+}
+
+.btn button {
+    /*width: 100%;*/
+    margin-top: 15px;
+    /*margin-left: 15px;*/
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+
+    max-width: 150px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: #a38ced;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.btn button:hover {
+    background-color: #53468b;
+
+}
+
+.ftmPage{
+    padding: 20px;
+}
+
+.customDataGrid{
+    position :relative;
+    border: 1px solid #c7c1d9;
+    background: #ffffff;
+    display: flex;
+    margin-top: 4%;
+}
+.customHeader{
+    font-size: 14px;
+    background-color: rgb(231, 221, 250);
+
+
+}
+
+
+.customCell{
+    font-size: 12px;
+
+
+
+}
+

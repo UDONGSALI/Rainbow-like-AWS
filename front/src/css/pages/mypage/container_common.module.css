@@ -1,0 +1,143 @@
+
+
+.sub_visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60rem;
+    padding: 0 3rem;
+    position: absolute;
+    width: 100%;
+}
+
+.layout {
+    position: relative;
+    max-width: 1240px;
+    swidth: 100%;
+    margin: 0 auto;
+}
+
+.sub_visual .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 0;
+
+}
+
+.sub_visual .bg img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 0;
+
+
+
+}
+
+.sub_visual .layout {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.sub_visual .layout h2 {
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+    line-height: 5.6rem;
+    font-weight: 700;
+    padding-top: 5%;
+
+}
+
+.sub_visual .layout .location {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 3.2rem;
+    padding:0;
+    position: relative;
+}
+
+
+
+.sub_visual .layout .location li {
+    margin-right: 1.8rem;
+    padding-right: 1.8rem;
+    position: relative;
+    list-style: none;
+}
+
+.sub_visual .layout .location li:before {
+    content: ">";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -1rem;
+    transform: translateY(-50%);
+    font-family: 'Prompt', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+
+
+}
+
+.sub_visual .layout .location li:last-of-type:before {
+    display: none;
+}
+
+.sub_visual .layout .location li:last-of-type {
+    margin: 0;
+    padding: 0;
+}
+
+.sub_visual .layout .location li a span {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+
+}
+
+/* 서브바 */
+.snb {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+}
+
+.snb layout {
+    width: 100%;
+    height: 100%;
+}
+
+.snb:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    background: #c4c2c2;
+    opacity: .5;
+    content: "";
+    backdrop-filter: saturate(160%) blur(20px);
+}
+
+
+
+
+
+

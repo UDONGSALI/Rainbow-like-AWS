@@ -1,0 +1,77 @@
+.thumbnailContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.thumbnailItem {
+    width: 23%;
+    cursor: pointer;
+}
+
+.imageFrame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.thumbnailImage {
+    width: 100%;
+    aspect-ratio: 1 / 0.95;
+    object-fit: cover;
+    transition: transform 0.6s; /* 이 줄을 추가합니다 */
+}
+
+.thumbnailItem:hover .thumbnailImage {
+    transform: scale(1.2);
+}
+
+.thumbnailText {
+    margin-top: 20px;
+    word-break: keep-all;
+}
+
+.eduType {
+    color: #0e7dc2;
+    font-weight: bold;
+}
+
+.businessType {
+    color: #a53af3;
+    font-weight: bold;
+}
+
+.statusBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22%;
+    height: 22%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.waiting, .closed {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 15px;
+}
+
+.ongoing {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 15px;
+}

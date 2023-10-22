@@ -1,0 +1,17 @@
+.container {
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #dadada;
+    margin-bottom: 15px;
+    width: 100%;
+    margin-top: 86px;
+}
+
+.header {
+    padding: 15px;
+}
+.list {
+    background-color: #b7b7b7;
+    display: flex;
+    justify-content: center;
+}

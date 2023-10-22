@@ -1,0 +1,31 @@
+.item {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    animation: slideFromLeft 0.8s forwards;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    padding: 10px;
+}
+
+.item:hover {
+}
+
+
+.active {
+    border-top: 3px solid #855cdc;
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+
+    }
+}

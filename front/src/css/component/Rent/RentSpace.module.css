@@ -1,0 +1,121 @@
+
+/*공통사항*/
+ #title{
+     padding-left: 20%;
+     padding-right: 20%;
+     font-family:'IBM Plex Sans KR', sans-serif;
+     font-size: 17px;
+ }
+
+ .basicInput{
+     width: 300px;
+     height: 40px;
+     border : 1px solid #ccc;
+     border-radius: 3px;
+     justify-content: center;
+ }
+
+.field{
+    width: 18%;
+    display: flex;
+}
+
+
+/*대관장소 정보*/
+ #title > .main1{
+     margin-top: 10%;
+     width: 100%;
+     height: 300px;
+     background: rgba(178, 147, 178, 0.22);
+     border-radius: 20px;
+ }
+
+ #title > .main1 > .rentSpace{
+     width: 100%;
+     display: flex;
+     padding: 6.5%
+ }
+
+ #title > .main1 > .rentSpace{
+     width: 100%;
+     display: flex;
+     padding: 4%
+ }
+
+ #title > .main1 > .rentSpace > .spaceInfo{
+    margin-left: 5%;
+ }
+
+ #title > .main1 > .rentSpace > .spaceInfo >.spaceName{
+
+     font-size: 30px;
+     font-weight: bold;
+     color: #6f2c94;
+     margin-top: 13%;
+ }
+
+
+
+ #title > .main1 > .rentSpace > .spaceInfo >div {
+
+     font-size: 18px;
+
+     margin-top: 7%;
+ }
+
+ #title > .main1 > .rentSpace > .spaceInfo >div >div {
+
+     font-size: 18px;
+     margin-top: 3%;
+ }
+
+ #title > .main1 > .rentSpace > .spaceInfo >div >div>b {
+
+     font-size: 20px;
+     font-weight: bold;
+     margin-top: 3%;
+ }
+
+/*대관신청정보*/
+
+ #title > .main2{
+     width: 100%;
+     margin-bottom: 5%;
+ }
+
+ #title > .main2>h3{
+     font-size: 25px;
+     font-weight: bold;
+ }
+
+ #title > .main2>.main2hr{
+     border: 1px solid black;
+ }
+
+#title> .main2 > .rentSpace {
+    position: relative;
+    width: 100%;
+}
+
+#title> .main2 > .rentSpace >.container{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+#title> .main2 > .rentSpace >.container > div >span{
+    color: red;
+    margin-right: 5%;
+}
+
+
+#title> .main2 > .rentSpace >.container > div >span{
+    color: red;
+    margin-right: 5%;
+}
+
+#title > .rentButton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+}

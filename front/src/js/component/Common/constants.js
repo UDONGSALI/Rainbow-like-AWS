@@ -1,0 +1,1 @@
+export const SERVER_URL='http://rainbow-like-env.eba-ipms93ww.ap-northeast-2.elasticbeanstalk.com/';

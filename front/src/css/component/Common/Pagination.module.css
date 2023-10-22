@@ -1,0 +1,95 @@
+/* 페이지 컨테이너 스타일 */
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    font-family: "Roboto Mono", sans-serif;
+}
+
+/* 페이지 목록 스타일 */
+.pagination {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 10px;
+
+}
+
+/* 페이지 아이템 스타일 */
+.pageItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.pageItem.active {
+    color: white;
+    border: none; /* 테두리 제거 */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul.pagination li {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+ul.pagination li:hover{
+    background-color: #e7e7e7;
+}
+
+ul.pagination li:first-child,
+ul.pagination li:nth-child(2),
+ul.pagination li:nth-last-child(2),
+ul.pagination li:last-child
+{
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+}
+ul.pagination li:first-child{
+    margin-right: -5px;
+}
+ul.pagination li:last-child{
+    margin-left: -5px;
+}
+
+
+ul.pagination li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+ul.pagination li.active a {
+    color: white;
+}
+
+ul.pagination li.active {
+    background-color: #565358;
+    border-color: #333;
+    border-radius: 50%;
+}
+
+ul.pagination li.active:hover {
+    background-color: black;
+}
+

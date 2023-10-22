@@ -1,0 +1,24 @@
+.memberDetailContainer {
+    width: 500px;
+}
+
+.memberDetailContainer .inputGroup{
+    margin-top: 12px;
+}
+
+.memberDetailContainer .inputGroup input{
+    font-size: 12px;
+    padding: 10px;
+}
+
+
+.memberDetailContainer button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.memberDetailContainer button:hover {
+    background-color: #0056b3;
+}

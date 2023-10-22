@@ -1,0 +1,29 @@
+.backButton {
+    /* 위치, 크기, 모양 */
+    position: fixed;
+    top: calc(100vh / 6);
+    left: calc(100vw / 30);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* 원형으로 */
+    z-index: 1000;
+
+    /* 시각적 스타일 */
+    background-color: skyblue;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+    /* 텍스트와 관련된 스타일 */
+    color: white;
+    font-size: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+
+    /* 기타 스타일 */
+    cursor: pointer;
+    outline: none;
+}
+
+.backButton:hover {
+    background-color: deepskyblue;
+}

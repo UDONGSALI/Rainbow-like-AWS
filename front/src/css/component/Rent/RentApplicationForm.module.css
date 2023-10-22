@@ -1,0 +1,118 @@
+
+#title {
+    position: relative;
+    margin-top: 5%;
+    font-family:'IBM Plex Sans KR', sans-serif;
+    font-size: 15px;
+}
+
+/*약관동의 시작*/
+#title > .main1 {
+    padding-bottom: 10%;
+}
+
+#title > .main1 > h3 {
+    margin-top: 3%;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+#title > .main1 > .line {
+    color: #161417;
+    width: 100%;
+    border-width: 3px;
+
+}
+
+/*개인정보수집 및 이용약관*/
+#title > .main1 > .personnalAgree {
+    padding-top: 3%;
+
+}
+
+#title > .main1 > .personnalAgree > p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#title > .main1 > .personnalAgree > p > span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8757B8;
+    padding-left: 5px;
+}
+
+#title > .main1 > .personnalAgree > .agreeBoxWrap {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+    height: 300px;
+    border: 1px solid rgba(125, 107, 133, 0.35);
+}
+
+#title > .main1 > .personnalAgree > .agreeBoxWrap > .agreeBox > ul {
+    padding-bottom: 20px;
+}
+
+#title > .main1 > .personnalAgree > .agreeBoxWrap > .agreeBox > ul > h3 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+
+#title > .main1 > .personnalAgree > .agreeBoxWrap > .agreeBox > ul > li {
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+
+
+
+/*이용료 면제 기준 안내*/
+
+#title > .main1 > .useFeeStandard {
+    padding-top: 3%;
+}
+
+#title > .main1 > .useFeeStandard > p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#title > .main1 > .useFeeStandard > p > span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #a6a0ad;
+    padding-left: 5px;
+}
+
+#title > .main1 > .useFeeStandard > .useFeeBoxWrap {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+    height: 200px;
+    border: 1px solid rgba(125, 107, 133, 0.35);
+}
+
+#title > .main1 > .useFeeStandard > .useFeeBoxWrap > .useFeeBox > ul {
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+#title > .main1 > .useFeeStandard > .useFeeBoxWrap > .useFeeBox  > ul > li {
+    font-size: 15px;
+    padding: 3px;
+
+}

@@ -1,0 +1,86 @@
+.const ul {
+    font-size: 14px;
+}
+
+.laborTop {
+    display: flex;
+    width: 60%; /* 가로 너비를 60%로 설정 */
+    margin: 0 auto; /* 화면 가운데 정렬 */
+    padding: 4rem 0; /* 기존 9rem에서 4rem으로 줄임 */
+    background: #F1F6FB;
+    border-radius: 5px;
+    align-items: center;
+    flex-wrap: nowrap; /* 줄바꿈 방지 */
+    margin-bottom: 50px;
+}
+
+.laborImg {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.laborImg img {
+    width: 100%; /* 이미지 가로 너비를 100%로 설정 */
+    max-width: 640px; /* 이미지 최대 가로 너비를 300px로 제한 */
+    height: auto; /* 이미지 세로 너비를 자동으로 설정 */
+}
+
+.const {
+    flex: 1;
+    padding-left: 2rem;
+    margin-left: 5%;
+}
+.constText {
+    margin-bottom: 0.3rem;
+}
+
+.constText p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #1E6FAC;
+}
+
+.iconList li {
+    display: flex;          /* flex 스타일 적용 */
+    align-items: center;    /* 수직 중앙 정렬 */
+}
+
+.iconList li span {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20%;
+    color: #727171;
+    border-width: 5px;
+    font-size: 12px;
+}
+
+.phoneNum{
+    color: #1E6FAC;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.location{
+    font-size: 14px;
+    margin: 10px;
+}
+
+.noticeBorderBox {
+    width: 47.5%;
+    margin: 2rem auto; /* 화면 가운데 정렬 및 상단 간격 설정 */
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+    padding: 1.5em;
+}
+
+.noticeTitle{
+    color: #53468b;
+    margin-bottom: 20px;
+}
+
+.noticeBorderBox p {
+    font-size: 14px;
+}

@@ -1,0 +1,25 @@
+.orgDetailContainer {
+    width: 500px;
+}
+
+.orgDetailContainer .inputGroup {
+    margin-top: 12px;
+}
+
+.orgDetailContainer .inputGroup label {
+    margin-bottom: 10px;
+}
+.orgDetailContainer .inputGroup input {
+    font-size: 12px;
+}
+
+.orgDetailContainer button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.orgDetailContainer button:hover {
+    background-color: #0056b3;
+}

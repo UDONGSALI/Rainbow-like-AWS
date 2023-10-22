@@ -1,0 +1,171 @@
+/* Intro/OrganizationChart.module.css */
+
+#contentWrap {
+    display: block;
+    margin: 0;
+    padding: 10rem 0 20rem 0;
+}
+
+.layout {
+    position: relative;
+    max-width: 1240px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#subTit {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#subTit h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.organization {
+    display: flex;
+    flex-direction: column;
+}
+
+.orgWrap {
+    margin-bottom: 9rem;
+}
+
+.head {
+    display: block;
+    width: 5.8rem;
+    height: 5.8rem;
+    border-radius: 50%;
+    background: #8757B8;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 5.8rem;
+    margin: auto;
+    position: relative;
+}
+
+.orgWrap .head::before {
+    content: "";
+    width: 1px;
+    height: 7rem;
+    background: black;
+    position: absolute;
+    bottom: -7rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.orgWrap .orgRight {
+    margin-top: 1.5rem;
+    margin-left: 40%;
+    position: relative;
+}
+
+.orgWrap .orgRight::before {
+    content: "";
+    width: 25%;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16.8%;
+}
+
+.orgWrap .orgRight p {
+    border: 3px solid #8757B8;
+    border-radius: 0.3rem;
+    width: 8rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    font-weight: bold;
+}
+
+.orgWrap .orgDepth1 {
+    margin-top: 2.5rem;
+    position: relative;
+    display: flex;
+}
+
+.orgWrap .orgDepth1::before {
+    content: "";
+    width: calc(100% - 33.333%);
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.orgWrap .orgDepth1 p {
+    padding-top: 4rem;
+    width: 33.333%;
+    position: relative;
+    font-weight: bold;
+}
+
+.orgWrap .orgDepth1 p span {
+    border: 3px solid #8757B8;
+    border-radius: 0.3rem;
+    width: 8rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    display: block;
+    margin: auto
+}
+
+.orgWrap .orgDepth1 p::before {
+    content: "";
+    width: 1px;
+    height: 4rem;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tbl, .tbl th, .tbl td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.tbl {
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 3px solid #8757B8;
+    letter-spacing: -0.05em;
+    table-layout: fixed;
+    margin-bottom: 50px;
+}
+
+
+.tbl th, .tbl td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.tbl thead th {
+    background-color: #f2e7ff;
+    font-weight: bold;
+}
+
+.orgTitle {
+    float: left;
+    font-weight: bold;
+    font-size: 22px;
+}
+.br0 {
+    border-right: 0;
+}

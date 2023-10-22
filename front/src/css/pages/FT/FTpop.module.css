@@ -1,0 +1,28 @@
+.FTList button {
+    width: 100%;
+    margin-top: 50px;
+    float: right;
+    /*margin-left: 15px;*/
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+
+    max-width: 150px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: #a38ced;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.FTList button:hover {
+    background-color: #53468b;
+}
+
+.FTList {
+    margin-bottom: 10%;
+    padding-bottom: 10px;
+}

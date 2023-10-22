@@ -1,0 +1,54 @@
+.Main {
+    width: 100%;
+}
+
+.slide {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform;
+    transform: translate3d(0,0,0);
+}
+
+.dotIndicator {
+    position: fixed;
+    z-index: 100;
+    left: 4%;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 30px 0;
+    transition: background-color 0.3s ease, outline 0.3s ease, outline-offset 0.3s ease; /* 이 줄을 추가 */
+}
+
+.dotImgContainer {
+    background-color: gray;
+    border: none;
+}
+
+.dotEduContainer {
+    background-color: gray;
+    border: none;
+}
+
+.dotRentContainer {
+    background-color: gray;
+    border: none;
+}
+
+.dotTalentContainer {
+    background-color: gray;
+    border: none;
+}
+
+.dotActive {
+    background-color: #53468b;
+    outline: 2px solid #53468b;
+    outline-offset: 5px;
+}

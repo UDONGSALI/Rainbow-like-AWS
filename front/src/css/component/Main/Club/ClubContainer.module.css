@@ -1,0 +1,15 @@
+
+.clubContainer{
+    position: relative;
+    width: 70%;
+    margin-top: 2.5%;
+
+}
+
+
+.clubContainer .image {
+    width: 100%;
+    opacity: 0.6;
+    object-fit: cover;
+    transition: transform 0.6s; /* 이 줄을 추가합니다 */
+}

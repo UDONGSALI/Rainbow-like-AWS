@@ -1,0 +1,30 @@
+/* SearchComponent.module.css */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.left {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    gap: 10px; /* 간격 설정 */
+}
+
+.right {
+    display: flex;
+    gap: 10px; /* 요소들 사이의 간격 */
+}
+
+.right button {
+    border: none; /* 버튼의 테두리 제거 */
+    cursor: pointer; /* 마우스 오버시 포인터로 변경 */
+}
+.right select {
+    border: none; /* 버튼의 테두리 제거 */
+}

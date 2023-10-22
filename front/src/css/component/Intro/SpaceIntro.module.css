@@ -1,0 +1,117 @@
+
+.contentWrap {
+}
+
+.layout {
+    padding: 0 2rem;
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.subTit {
+    position: relative;
+    margin-top: 3rem
+}
+
+.subTit h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.space .topBox {
+    margin-top: 3%;
+    display: block;
+    background: #F5F5F5;
+    border-radius: 1rem;
+    padding: 7.4rem 3rem 4rem;
+}
+
+.space .topBox .topBoxInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space .topBoxInner .img {
+    width: 39rem;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    vertical-align: top;
+}
+
+.topBoxTxt {
+    padding-left: 2.7rem;
+    width: 47rem;
+    max-width: 100%;
+}
+
+.topBoxTxt li {
+    padding: 0.4rem 0;
+}
+
+.topBoxTxt li > div {
+    display: flex;
+    align-items: center;
+}
+
+.topBoxTxt li:first-of-type > div {
+    display: block;
+}
+
+.topBoxTxt li:first-of-type .floor {
+    color: #8757B8;
+    font-size: 2.2rem;
+}
+
+.topBoxTxt li:first-of-type em {
+    font-size: 3rem;
+}
+
+.space .topBoxTxt li > div strong{
+    font-size: 2rem;
+    color: #431274;
+    font-weight: 700;
+    padding-left: 0.5rem;
+}
+
+.space .topBoxTxt li:first-of-type > div p {
+    padding-left: 0;
+    color: #646363;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    font-weight: bold;
+    word-break: keep-all;
+}
+
+.space .topBoxTxt li:nth-of-type(n+2) {
+    border-top: 1px solid #E4E4E4;
+}
+
+.space .topBoxTxt .floor {
+    color: #565358;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.space .topBoxTxt li > div p {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+    color: #222;
+    font-weight: bold;
+    padding-top: 0.7rem;
+}
+
+.space .topBoxTxt .floor em {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding-right: 0.2rem;
+}
+
+.space .topBox > p {
+    text-align: center;
+    margin-top: 3.3rem;
+    color: #565358;
+}

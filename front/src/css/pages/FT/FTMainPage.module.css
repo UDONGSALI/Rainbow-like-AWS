@@ -1,0 +1,44 @@
+.ftMain{
+    margin: 0 auto;
+
+    max-width: 60%;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.ftCont{
+    padding: 20px;
+}
+
+
+.ftCont h1 {
+
+    margin-bottom: 50px;
+}
+
+.ftCont p{
+    line-height: 180%;
+}
+
+.btn button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+
+    max-width: 200px;
+    margin-left: 5px;
+    align-items: center;
+    text-align: center;
+    background-color: #a38ced;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.btn button:hover {
+    background-color: #53468b;
+}

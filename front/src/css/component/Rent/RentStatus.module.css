@@ -1,0 +1,134 @@
+
+
+#title{
+    position: relative;
+    margin-top: 3%;
+    padding-right: 20%;
+    padding-left: 20%;
+    font-family:'IBM Plex Sans KR', sans-serif;
+}
+
+#title > li{
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+
+
+#title > .rentStatus{
+
+    padding : 0;
+    table-layout: fixed;
+    width: 100%;
+
+}
+
+/*공간대관 범례*/
+
+#title > .rentStatus > .spaceName > ul  {
+    padding: 20px;
+    display: flex;
+}
+
+#title > .rentStatus > .spaceName > ul >li  {
+    padding-left: 0;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    display: flex;
+}
+
+#title > .rentStatus > .spaceName > ul > .room1  {
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#title > .rentStatus > .spaceName > ul > .room2  {
+    color: orange;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#title > .rentStatus > .spaceName > ul > .room3  {
+    color: #e7db47;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#title > .rentStatus > .spaceName > ul > .room4  {
+    color: yellowgreen;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#title > .rentStatus > .spaceName > ul > .room5  {
+    color: cornflowerblue;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#title > .rentStatus > .spaceName > ul > .room6  {
+    color: navy;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+#title > .rentStatus > .spaceName > ul > .room7  {
+    color: #9b4cf3;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#title > .rentStatus > .spaceName > ul > .room8  {
+    color: #49464b;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/*대관예약 안내사항*/
+
+#title > .rentStatus > .rentNotice{
+    margin-bottom: 3%;
+    width: 100%;
+    border : 1px solid rgba(187, 168, 196, 0.73);
+    border-radius: 5px;
+
+
+}
+
+#title > .rentStatus > .rentNotice > ul{
+    padding: 30px;
+    padding-left: 50px;
+    width: 100%;
+
+
+}
+
+#title > .rentStatus > .rentNotice > ul >li{
+    margin-bottom: 10px;
+    font-size: 16px;
+
+}
+
+
+
+#title > .rentStatus > .rentNotice > ul >li >b{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#title > .rentStatus > .rentNotice > ul >li >span{
+    font-weight: bold;
+    font-size: 16px;
+    color: #8757B8;
+}
+
+#title > .rentStatus > .rentCalender {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+

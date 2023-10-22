@@ -1,0 +1,91 @@
+
+/*공통사항*/
+
+#title{
+    position: relative;
+    margin-top: 5%;
+    font-size: 17px;
+    font-family:'IBM Plex Sans KR', sans-serif;
+    width: 100%;
+}
+
+.field{
+    width: 18%;
+}
+
+.memBasicInput{
+    width: 300px;
+    height: 40px;
+    border : 1px solid #ccc;
+    border-radius: 3px;
+    justify-content: center;
+}
+
+
+#title > .memApplyInfo{
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+
+#title > .memApplyInfo >h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#title > .memApplyInfo > .mainHr{
+    border: 1px solid black;
+}
+
+
+#title> .memApplyInfo > .memInfo {
+    position: relative;
+    width: 100%;
+}
+
+#title> .memApplyInfo > .memInfo >.container{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+#title> .memApplyInfo > .memInfo >.container >div > span{
+    color: red;
+    margin-right: 5%;
+}
+#title> .memApplyInfo > .memInfo >.container >.buttonWrap {
+    margin-left: 3%;
+    width: 100%;
+}
+
+
+#title> .memApplyInfo > .memInfo >.container >.buttonWrap >p{
+    color: #a1a1a1;
+    font-weight: bold;
+    margin-top: 1%;
+    width: 100%;
+}
+
+#title> .memApplyInfo > .memInfo >.container >.buttonWrap >.buttonInfoWrap >.buttonInfo{
+    display: flex;
+    width: 100%;
+
+}
+
+#title> .memApplyInfo > .memInfo >.container >.buttonWrap >.buttonInfoWrap >.buttonInfo >p{
+    color: #a1a1a1;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-right: 1%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding : 4px;
+
+}
+
+#title> .memApplyInfo > .memInfo >.container >.buttonWrap >.buttonInfoWrap >.buttonInfo >.ceoFile{
+
+    margin-top: 0.5%;
+
+
+}

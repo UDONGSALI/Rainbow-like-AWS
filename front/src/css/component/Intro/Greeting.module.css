@@ -1,0 +1,83 @@
+/* 컨테이너 전체의 스타일 */
+.FullContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #FAFAFA;
+}
+
+/* 섹션의 스타일 */
+#contentWrap {
+    width: 100%;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto;
+}
+
+/* 인사말 타이틀의 스타일 */
+#subTit h3 {
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* 인사말 영역 전체의 스타일 */
+.greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 이미지 영역의 스타일 */
+.greetingImg {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.greetingImg img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 텍스트 영역의 스타일 */
+.greetingTxt {
+    flex: 2;
+    padding: 0 20px;
+}
+.highLight{
+    color: #431274;  /* 글자 색상 */
+    font-weight: bold;  /* 글자 굵게 */
+    border-radius: 5px;  /* 둥근 모서리 */
+    background-image: linear-gradient(to top, #f2e7ff 50%, transparent 50%);
+    display: inline-block;  /* 블록 요소로 변경 (필요한 경우) */
+}
+
+.greetingTxt h4 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.greetingTxt p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.dFName span {
+    margin-left: 10px;
+    font-size: 32px;
+    font-family: 'InkLipquid', fangsong;
+}
+
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,206 @@
+/* 추가된 CSS 스타일 */
+/* .postDetail 클래스 스타일 */
+.postDetail {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .titleDivider 클래스 스타일 */
+.titleDivider {
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+/* .title 클래스 스타일 */
+.title {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .postMeta 클래스 스타일 */
+.postMeta {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* .postData 클래스 스타일 */
+.postData {
+    text-align: center;
+    padding: 5px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f9fa;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #555;
+}
+
+/* .postMenuTitle 클래스 스타일 */
+.postMenuTitle {
+    padding: 0.8em;
+    border-right: 1px solid #E4E4E4;
+    color: #333;
+    background-color: #fff;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+/* .leftTop 클래스 스타일 */
+.leftTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* .postImage 클래스 스타일 */
+.postImage {
+    max-width: 100%;
+    height: auto;
+}
+
+/* .postContent 클래스 스타일 */
+.postContent {
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 2.5em;
+}
+.postContent p img{
+    max-width: 100%;
+}
+
+/* .fileList 클래스 스타일 */
+.postFileList {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .fileBox 클래스 스타일 */
+.postFileBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f9fa;
+    margin: 10px;
+}
+
+/* .fileLabel 클래스 스타일 */
+.postFileLabel {
+    margin-left: 25px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+/* .fileDivider 클래스 스타일 */
+.postFileDivider {
+    border-left: 1px solid #ddd;
+    height: 100%;
+    margin: 0 10px;
+}
+
+/* .fileNames 클래스 스타일 */
+.postFileNames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .fileName 클래스 스타일 */
+.postFileName {
+    margin: 10px 0;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+/* .fileName:hover 클래스 스타일 */
+.postFileName:hover {
+    font-weight: bold;
+    color: black;
+}
+
+/* .postButton 클래스 스타일 */
+.postButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .postEditButton, .postDeleteButton, .postListButton 클래스 스타일 */
+.postEditButton,
+.postDeleteButton,
+.postReplyButton,
+.postListButton {
+    padding: 10px 20px;
+    background-color: #a38ced;
+    font-size: 16px;
+    border: 1px solid #99959e;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: white;
+}
+
+/* .postDeleteButton 클래스 스타일 */
+.postDeleteButton {
+    margin-right: 50px;
+}
+
+/* .postListButton 클래스 스타일 */
+.postListButton {
+    /*margin-left: auto;*/
+}
+
+/* .postEditButton:hover, .postDeleteButton:hover, .postListButton:hover 클래스 스타일 */
+.postEditButton:hover,
+.postDeleteButton:hover,
+.postListButton:hover {
+    background-color: #53468b;
+    color: #fff;
+}
+
+/* .prevButton, .nextButton 클래스 스타일 */
+.prevButton .prevButtonStyle,
+.nextButton .nextButtonStyle {
+    border: none;
+    background-color: white;
+}
+
+.prevButton  {
+    border: none;
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.nextButton{
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+}
+
+/* .prevButtonStyle:hover, .nextButtonStyle:hover 클래스 스타일 */
+.prevButtonStyle:hover,
+.nextButtonStyle:hover {
+    color: #99959E;
+}

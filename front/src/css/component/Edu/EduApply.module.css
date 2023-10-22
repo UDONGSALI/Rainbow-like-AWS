@@ -1,0 +1,104 @@
+/* 공통 스타일 */
+.eduApplyContainer {
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eduApplyContainer hr {
+    color: black;
+    background-color: black;
+}
+
+.eduApplyContainer p {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+/* 체크박스 스타일 */
+.eduApplyContainer input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    accent-color: #a38ced;
+}
+
+/* 교육 정보 스타일 */
+.eduApplyContainer .eduInfo {
+    background-color: #F9F8F9;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.eduApplyContainer .eduInfo h3 {
+    color: #53468b;
+    margin-bottom: 10px;
+}
+
+/* 약관 내용 스타일 */
+.eduApplyContainer .termsDetail {
+    border: 1px solid #d0d0d0;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* 신청자 정보 스타일 */
+.eduApplyContainer .memInfo {
+    width: 30%;
+}
+
+.eduApplyContainer label {
+    font-weight: bold;
+}
+
+/* 입력 필드 스타일 */
+.eduApplyContainer input[type="text"],
+.eduApplyContainer input[type="email"],
+.eduApplyContainer input[type="tel"] {
+    width: 40%;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* 버튼 스타일 */
+.eduApplyContainer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a38ced; /* 연한 보라색 */
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.eduApplyContainer button:hover {
+    background-color: #53468b; /* 호버 시 좀 더 진한 보라색 */
+    transform: translateY(-2px); /* 호버 시 버튼을 위로 약간 움직입니다 */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자를 조금 줄입니다 */
+}
+
+.eduApplyContainer button:active {
+    background-color: #a38ced; /* 연한 보라색 */
+    transform: translateY(2px); /* 버튼을 클릭할 때 아래로 약간 움직입니다 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 버튼을 클릭할 때 그림자를 더 줄입니다 */
+}
+
+/* 체크박스 컨테이너 스타일 */
+.checkboxContainer {
+    margin-top: 10px;
+}
+
+.checkboxContainer span {
+    font-size: 14px;
+    margin-left: 10px;
+}

@@ -1,0 +1,84 @@
+
+.registrationFormContainer {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+.registrationFormContainer h2 {
+    text-align: center;
+    padding: 30px;
+}
+.registrationForm .inputGroup {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.registrationForm  input,
+.registrationForm button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
+
+.registrationForm select{
+    display: block;
+    width: 50%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.registrationForm textarea {
+    width: 100%;
+    height: 300px;
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: none;
+}
+
+.registrationForm button {
+    max-width: 120px;
+    margin: 0 auto;
+    background-color: #a38ced;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.radioGroup {
+    display: flex; /* 라디오 버튼을 가로로 나열하도록 설정 */
+    gap: 16px; /* 라디오 버튼 간격 조정 */
+}
+
+/* 기존의 스타일 변경 */
+.radioGroup label {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle; /* 라디오 버튼과 텍스트를 수직 정렬 */
+}
+
+/* 라디오 버튼의 스타일 추가 */
+.radioGroup {
+    margin-right: 4px; /* 라디오 버튼과 텍스트 간격 조정 */
+}
+
+.registrationForm button:hover {
+    background-color: #53468b;
+}

@@ -1,0 +1,22 @@
+#rentBody{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+
+.rentProcess {
+    overflow-y: auto;
+
+}
+
+
+.footer{
+    height: 250px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+

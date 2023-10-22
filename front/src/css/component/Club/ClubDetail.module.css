@@ -1,0 +1,81 @@
+
+
+.postDetailPage {
+    /*max-width: 60%;*/
+    margin: 0 auto;
+    /*margin-left: 10%;*/
+    padding: 5%;
+}
+
+.postMeta{
+    display: flex;
+    justify-content: space-between; /* 이 설정은 postMeta1을 왼쪽으로, postMeta2를 오른쪽으로 이동시킵니다. */
+    align-items: center; /* 이 설정은 postMeta1과 postMeta2의 내용을 수직으로 정렬합니다. */
+    margin-top: 30px;
+}
+
+.postMeta1{
+    /*display: inline-block;*/
+    /*margin-top: 5%;*/
+    margin-bottom: 50px;
+    /*float: left;*/
+    /*margin-left: 10%;*/
+}
+.postMeta2{
+     margin-bottom: 50px;
+     /*margin-right: 5px;*/
+    display: flex;
+
+}
+.metaItem {
+    margin-right: 20px; /* 각 요소 사이에 오른쪽 여백을 5px 추가합니다. */
+}
+
+
+.content{
+    margin-bottom: 100px;
+}
+
+
+.postButton {
+    text-align: center;
+}
+
+.postButton button {
+    display :inline-block;
+    width: 100%;
+    /*margin: 0 auto;*/
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    max-width: 100px;
+    margin-left: 5px;
+    align-items: center;
+    text-align: center;
+    background-color: #a38ced;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.postButton button:hover {
+    background-color: #53468b;
+}
+
+
+.FTDetailPage {
+    margin: 0 auto;
+    padding: 20px;
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+}
+
+.FTDetailPage div{
+    padding: 20px;
+    /*border: 1px solid #ccc;*/
+}

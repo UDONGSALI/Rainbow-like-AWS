@@ -1,0 +1,81 @@
+
+/*더보기버튼*/
+#modal{
+    margin: 0;
+    padding: 0;
+    font-family: Prompt;
+}
+
+#modal > .extension {
+
+      background-color: #c1a1fa;
+      border-radius: 5px;
+  }
+
+#modal > .extension > button {
+    font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+  }
+
+
+/*모달*/
+
+.outer {
+     position :relative;
+     width: 95%;
+    padding :0;
+     align-items: center;
+ }
+
+
+.innerWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imgs{
+    padding:5%;
+    position: relative;
+
+}
+
+.imgs >img{
+    padding:0;
+    position: relative;
+
+}
+
+.spaceInformation {
+    position: relative;
+    flex: 1;
+    padding: 10px;
+}
+
+.spaceInformation> .spaceNames{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.spaceInformation> hr{
+    border: 1px solid #000;
+}
+
+.spaceInformation> .modalDescription{
+    font-size: 15px;
+
+}
+
+/*닫기 버튼*/
+
+.closedButton {
+    display: flex;
+    align-items: center;
+}
+
+.closedButton > Button {
+    margin: 0 auto; /* 가운데 정렬 */
+}
+

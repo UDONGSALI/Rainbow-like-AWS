@@ -1,0 +1,65 @@
+#review{
+    position: relative;
+    margin-top: 5%;
+    padding-right: 20%;
+    padding-left: 20%;
+    font-family:'IBM Plex Sans KR', sans-serif;
+    font-size: 20px;
+
+}
+
+
+
+#review >.postBox{
+    width: 100%;
+    height: 700px;
+    border: 2px solid #bdb5da;
+    border-radius: 5px;
+}
+#review >.postBox >.titleWrap{
+   background-color: rgba(135, 87, 184, 0.22);
+    padding:1%;
+}
+#review >.postBox >.titleWrap >.title{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 20px;
+
+
+}
+
+#review >.postBox >.titleWrap >.title >h2{
+    font-size: 28px;
+}
+
+#review >.postBox>.titleWrap  >.info{
+    display: flex;
+    justify-content: right;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 20%;
+    height: 20px;
+    width: 100%;
+}
+
+#review >.postBox > hr{
+    border: 2px solid #9d91cc;
+}
+
+#review >.postBox>.titleWrap  >.info >p{
+    margin-left: 3%;
+
+}
+
+#review >.postBox >.content{
+    padding-top: 5%;
+    padding-left:5%;
+    padding-right: 5%;
+}
+
+
+
+
+

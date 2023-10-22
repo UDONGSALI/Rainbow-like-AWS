@@ -1,0 +1,95 @@
+
+/* 게시글 목록 컨테이너 스타일 */
+.sjNewsListContainer {
+    display: flex;
+    flex-wrap: wrap; /* 줄 바꿈을 허용 */
+    justify-content: space-between;
+    width: 60%; /* 전체 페이지의 60% 너비로 설정 */
+    margin: 0 auto; /* 페이지를 가운데로 정렬 */
+}
+
+/* 게시글 썸네일 스타일 */
+.customLink {
+    width: calc(33.33% - 10px); /* 한 줄에 세 개의 게시글을 나열하므로 너비를 조절 */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* 내부 요소들을 세로로 정렬 */
+    border-radius: 5px;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
+}
+
+.leftTop {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 0;  /* 초기 높이 값을 0으로 설정 */
+    padding-bottom: 100%;
+}
+
+.postImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 이미지가 컨테이너 크기에 맞게 잘라내어 표시 */
+    position: absolute;  /* 이미지가 .leftTop의 padding-bottom에 의한 높이를 채우도록 함 */
+    top: 0;
+    left: 0;
+}
+
+.title {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.postData {
+    font-size: 14px;
+    color: #555;
+    margin: 0 auto;
+}
+
+.newPost {
+    margin-left: 48%;
+    width: 80px;
+    height: 35px;
+    background-color: #a38ced;
+    border: 1px solid #99959e;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.newPost:hover {
+    background-color: #53468b;
+}
+
+/*뉴스레터의 썸네일*/
+.newsBoradSum {
+    height: auto;
+    width: calc(33.33% - 10px); /* 한 줄에 세 개의 게시글을 나열하므로 너비를 조절 */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* 내부 요소들을 세로로 정렬 */
+    border-radius: 5px;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
+}
+
+.newsBoradSum .postImage {
+    width: 100%;
+    height: auto;   /* 이미지의 원래 비율을 유지하면서 너비에 맞게 조절 */
+    object-fit: contain;  /* 이미지를 박스 내부에 맞게 조절하면서 원래 비율 유지 */
+}
+
+/* 뉴스레터의 썸네일 스타일 */
+.newsBoradSum .leftTop {
+    padding-bottom: 50%;
+}

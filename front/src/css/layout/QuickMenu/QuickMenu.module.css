@@ -1,0 +1,31 @@
+.quickMenu {
+    position: fixed; /* 고정 위치 설정 */
+    display: flex;
+    flex-direction: column;
+    top: 68%; /* 화면 상단에서 중앙으로 이동 */
+    right: 4%; /* 화면 오른쪽에 붙임 */
+    transform: translate(-50%, -50%); /* 수직 중앙 정렬 */
+    z-index: 1000000; /* 다른 요소 위에 표시하기 위한 z-index 설정 */
+    gap: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    word-break: keep-all;
+    text-align: center;
+    background: linear-gradient(to bottom right, #a38ced, #7a73fa); /* 그라디언트 방향 조정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 10px rgba(0, 0, 0, 0.19); /* 그림자 조정 */
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.chatBot {
+    border-radius: 50% 50% 50% 0% / 50% 50% 50% 0%;
+}

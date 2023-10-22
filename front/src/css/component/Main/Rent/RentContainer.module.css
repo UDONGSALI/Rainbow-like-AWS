@@ -1,0 +1,156 @@
+.RentContainer{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5%;
+}
+
+.RentContainer .TextComponent{
+    width: 30%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.6s; /* 이 줄을 추가합니다 */
+}
+@keyframes borderAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.RentContainer .LinkComponent {
+    font-size: 22px;
+    font-weight: bold;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s; /* 글자 색상 부드럽게 변경 */
+    cursor: pointer;
+}
+
+.RentContainer .LinkComponent:hover {
+    color: #53468b; /* 원하는 글자 색상으로 변경 */
+}
+
+.RentContainer .LinkComponent::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #53468b;
+    transition: width 0.5s;
+}
+
+.RentContainer .LinkComponent:hover::after {
+    width: 100%;
+}
+
+@keyframes arrowMove {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.RentContainer .LinkComponent::before {
+    font-weight: bold;
+    content: "→"; /* 화살표 아이콘 */
+    position: absolute;
+    right: 20px; /* 화살표의 초기 위치 (왼쪽으로 20px 옮기기 위한 값 조정) */
+    transition: opacity 1s; /* opacity만 transition으로 처리하며, transform은 keyframes에서 처리합니다. */
+    opacity: 0; /* 화살표를 처음에는 투명하게 설정 */
+}
+
+.RentContainer .SelectedLink {
+    color: #53468b;
+}
+
+.RentContainer .SelectedLink::after {
+    width: 95%;
+    background-color: #53468b;
+}
+
+.RentContainer .SelectedLink::before {
+    opacity: 1;
+    animation: arrowMove 0.8s infinite;
+}
+
+.RentContainer .LinkComponent:hover::before {
+    animation: arrowMove 0.8s infinite; /* 1초 동안 반복되는 애니메이션을 적용 */
+    opacity: 1; /* 화살표를 보이게 설정 */
+}
+
+.RentContainer .ImageComponent {
+    width: 65%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.6s;
+}
+
+.RentContainer .ImageComponent .Image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.RentContainer button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50% 50% 50% 50% / 50% 50% 0% 50%   ;
+    border: none;
+    margin-left: 15px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.RentContainer .SelectedButton {
+    background-color: #4b3c8f;
+    color: white;
+}
+
+.rentButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color: #a38ced;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.plusIcon {
+    font-size: 18px;
+    font-weight: bolder;
+    transition: transform 0.6s;
+}
+
+.rentButton:hover .plusIcon {
+    transform: rotate(180deg);
+}
+

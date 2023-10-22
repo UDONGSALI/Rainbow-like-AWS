@@ -1,0 +1,60 @@
+.container {
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: linear-gradient(to bottom right, #F9F8F9, #fdf3fd);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    margin-top: 2.5%;
+}
+
+.itemComponent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ftc {
+    display: flex;
+    flex-direction: row;
+}
+
+.ftw {
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    height: 200px;
+    background: linear-gradient(to bottom right, #fffef9, #fff9ef);
+    margin: 10px;
+    padding: 15px;
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    word-wrap: break-word;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header h2 {
+    font-weight: bold;
+    color: #4b3c8f;
+}
+
+.header h1 {
+    font-weight: bold;
+}
+
+.marginTop {
+    margin-top: 10px;
+}

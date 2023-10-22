@@ -1,0 +1,133 @@
+
+/*footer 전체 */
+
+
+
+#footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-family: Prompt;
+    margin-top: 20px;
+
+}
+
+#footer > .layout{
+    position: relative;
+    display: flex;
+    padding-top: 3%;
+    padding-left: 10%;
+    height: 320px;
+    background-color: #505050;
+}
+
+/*footer logo 부분 */
+
+#footer > .layout > .logo{
+    padding-left: 10%;
+}
+
+
+#footer > .layout > .logo >.footerLogo{
+    padding-top: 5%;
+    padding-left: 10%;
+    display: flex;
+    position: relative;
+    max-width: 1240px;
+    width: 100%;
+
+
+}
+
+
+/*footer 개인정보 및 이용, 이메일 부분 */
+
+#footer > .layout > .information {
+    padding-left: 10%;
+    padding-bottom: 80px;
+    display: block;
+
+}
+
+
+#footer > .layout > .information > .otherList {
+    display: flex;
+    margin-bottom: 10%;
+    position: absolute;
+    width: 100%;
+
+}
+
+
+#footer > .layout > .information > .otherList > .otherListItemFirst {
+    margin-right: 50px;
+    position : relative;
+}
+
+#footer > .layout > .information > .otherList > .otherListItemFirst > a{
+    text-decoration: none;
+}
+
+#footer > .layout > .information > .otherList > .otherListItemFirst > a > span {
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #B770FF;
+
+}
+
+#footer > .layout > .information > .otherList > .otherListItemSecond {
+    margin-right: 50px;
+    position : relative;
+
+}
+
+#footer > .layout > .information > .otherList > .otherListItemSecond > a{
+    text-decoration: none;
+}
+
+#footer > .layout > .information > .otherList > .otherListItemSecond > a > span {
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+
+#footer > .layout > .information > .otherList > .otherListItemLast {
+    margin-right: 50px;
+    position : relative;
+
+}
+
+#footer > .layout > .information > .otherList > .otherListItemLast > a{
+    text-decoration: none;
+}
+
+#footer > .layout > .information > .otherList > .otherListItemLast > a > span {
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+
+/*footer 주소부분*/
+
+#footer > .layout > .information > .address {
+
+    position: relative;
+    padding-top: 20%;
+}
+
+#footer > .layout > .information > .address > .addressP {
+    display: flex;
+    position: relative;
+    font-size: 15px;
+    line-height: 20px;
+    color: #fff;
+}
+
+#footer > .layout > .information > .address > .addressCopr {
+    color: #aaa9a9;
+}

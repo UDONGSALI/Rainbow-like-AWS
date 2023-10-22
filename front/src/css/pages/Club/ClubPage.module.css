@@ -1,0 +1,16 @@
+.ClubMainPage{
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 10px;
+
+    text-align: center;
+}
+.ClubMainPage h1 {
+    margin-bottom: 50px;
+}
+.List{
+}
+
+.cm p{
+    line-height: 180%;
+}

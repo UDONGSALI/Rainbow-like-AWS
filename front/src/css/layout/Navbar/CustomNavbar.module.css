@@ -1,0 +1,135 @@
+.navbar {
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 20px 2.5%;
+    border: 1.5px solid #b4b4b4;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.activeMenuBackground {
+    background-color: #ffffff; /* 흰색 배경 */
+}
+
+.logo {
+    width: 100% ;
+    object-fit: contain;
+}
+
+.sns {
+    width: 30px;
+    object-fit: contain;
+}
+
+.magnifier {
+    width: 40px;
+    object-fit: contain;
+}
+
+.itemArea {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 5;
+    align-items: stretch;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1.5px solid #b4b4b4;
+}
+
+.menuContainer {
+    width: 55%;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.snsContainer {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.titleText {
+    animation: slideLeft 0.6s ease-out;
+}
+
+.itemContent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 84%;
+    box-sizing: border-box;
+    padding: 20px 5px;
+}
+
+.item {
+    display: inline;
+    min-width: 170px;
+    padding: 5px;
+    margin: 15px 20px;
+    color: #a38ced;
+    cursor: pointer;
+    border-bottom: 1.5px solid #cecece;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    animation: slideDown 0.6s ease-out;
+}
+
+.titleArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 13.5%;
+    font-weight: bold;
+    background-color: #53468b;
+    color: white;
+    border-right: 1px solid white;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+
+.navbar button{
+  background-color: rgba(255, 255, 255, 0);
+    border: none;
+    padding: 3px;
+}

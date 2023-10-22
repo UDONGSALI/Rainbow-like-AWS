@@ -1,0 +1,65 @@
+/* QnA.module.css */
+.acodiHeader,
+.acodiHeaderActive {
+    display: flex;
+    align-items: center;
+}
+
+
+.firstAccordion {
+    border-top: 4px solid #350362;  /* 기본 색상 */
+}
+
+.firstAccordionActive {
+    border-top: 4px solid #b95bde; /* 활성화될 때의 색상 */
+}
+
+.QuestionMark, .answerMark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%; /* 원 모양으로 만들기 위해 */
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1rem;
+    margin-right: 8px;
+}
+
+.QuestionMark {
+    color: white;
+    background-color: black;
+}
+
+.answerMark {
+    background-color: #431274;
+    color: #f3f3f3;
+}
+
+.Question {
+    flex: 1;
+    margin-left: 2em;
+    font-weight: 1000;
+    font-size: 1.1rem;
+}
+
+.acodInner {
+    display: flex;
+    align-items: center;
+}
+
+.answerTxt {
+    flex: 1;
+    margin-left: 2em;
+    font-weight: bold;
+}
+
+.acodiHeaderActive .QuestionMark {
+    background-color: #9437f1;
+    color: white;
+}
+
+.acodiHeader, .acodiHeaderActive {
+    height: 3em;
+}

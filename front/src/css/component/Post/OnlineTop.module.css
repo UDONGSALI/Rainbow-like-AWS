@@ -1,0 +1,83 @@
+.const ul {
+    font-size: 14px;
+}
+
+.onlineTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47.5%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    background: #f8f3ff;
+    margin-bottom: 50px;
+}
+
+.onlineImg {
+    display: flex;          /* Flexbox 활성화 */
+    justify-content: center;  /* 가로 중앙 정렬 */
+    width: 100%;
+}
+
+.onlineImg img {
+    width: 70%;
+    height: auto; /* 이미지의 원래 비율을 유지하면서 너비에 맞게 높이를 조절 */
+}
+
+.const {
+    flex: 1;
+    padding-left: 2rem;
+    margin-left: 5%;
+}
+.constText {
+    margin-bottom: 0.3rem;
+}
+
+.constText p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #1E6FAC;
+}
+
+.iconList li {
+    display: flex;          /* flex 스타일 적용 */
+    align-items: center;    /* 수직 중앙 정렬 */
+}
+
+.iconList li span {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 20%;
+    color: #727171;
+    border-width: 5px;
+    font-size: 12px;
+}
+
+.phoneNum{
+    color: #1E6FAC;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.location{
+    font-size: 14px;
+    margin: 10px;
+}
+
+.noticeBorderBox {
+    width: 47.5%;
+    margin: 2rem auto; /* 화면 가운데 정렬 및 상단 간격 설정 */
+    border: 1px solid #9a9a9a;
+    border-radius: 5px;
+    padding: 1.5em;
+}
+
+.noticeTitle{
+    color: #53468b;
+    margin-bottom: 20px;
+}
+
+.noticeBorderBox p {
+    font-size: 14px;
+}

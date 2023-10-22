@@ -1,0 +1,90 @@
+/* PostForm.module.css */
+
+.parentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* 부모 컨테이너의 가로를 100%로 설정 */
+}
+
+.postFormContainer {
+    width: 60%; /* 폼 컨테이너의 가로를 60%로 설정 */
+}
+
+.formHeader {
+    display: flex;
+    align-items: center;
+}
+
+.formHeaderText {
+    font-size: 24px;
+}
+
+.other-hr {
+    border-top: none;
+}
+
+.formHeaderLine {
+    border: none;
+    border-top: 2px solid #3d3d3d;
+    margin-bottom: 5%;
+}
+
+.registrationForm {
+    width: 100%;
+    max-width: 400px;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    margin-right: 10px;
+    text-align: left; /* 라벨 텍스트를 가로로 정렬합니다. */
+    min-width: 100px; /* 최소 너비를 설정하여 라벨의 크기를 일정하게 유지합니다. */
+}
+.required {
+    color: red;
+    margin-right: 5px; /* *과 텍스트 사이의 간격을 조절합니다. */
+}
+
+.parentContainer input[type="text"],
+.parentContainer input[type="email"] {
+    width: 25%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.customQuill {
+    width: 100%; /* 가로 길이 조절 */
+    height: 500px; /* 세로 길이 조절 */
+    margin-bottom: 50px;
+}
+
+.parentContainer .buttonGroup {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.parentContainer button[type="submit"],
+.parentContainer button[type="button"] {
+    background-color: #a38ced;
+    border: 1px solid #99959e;
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.parentContainer button[type="submit"]:hover,
+.parentContainer button[type="button"]:hover {
+    background-color: #53468b;
+}

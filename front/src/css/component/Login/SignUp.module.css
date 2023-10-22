@@ -1,0 +1,133 @@
+.signFormContainer {
+    width: 30vw;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.signForm {
+    width: 90%;
+    position: relative;
+}
+
+/* --- 제목 스타일 --- */
+.signForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- 입력 그룹과 레이블 스타일 --- */
+.signForm .inputGroup {
+    position: relative;
+    width: 100%;
+}
+
+.inputGroup label {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    transition: all 0.3s;
+    color: #777;
+    pointer-events: none;
+    background-color: #f9f9f9;
+    padding: 0 5px;
+    margin-left: -5px;
+}
+
+.inputGroup input:focus + label,
+.inputGroup input:not(:placeholder-shown) + label {
+    transform: translateY(-15px);
+    font-size: 12px;
+    color: #007bff;
+}
+
+/* --- 입력 필드, 선택 및 버튼 스타일 --- */
+.signForm input,
+.signForm select,
+.signForm button {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 9px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.signForm button {
+    background-color:  #a38ced; /* 연한 보라색 */
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* 둥근 모서리 */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* 입체감을 위한 그림자 */
+    transition: all 0.3s; /* 부드러운 호버 효과를 위한 전환 */
+    font-weight: bold;
+}
+
+.signForm button:hover {
+    background-color: #53468b; /* 호버 시 좀 더 진한 보라색 */
+    transform: translateY(-2px); /* 호버 시 버튼을 위로 약간 움직입니다 */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4); /* 호버 시 그림자를 조금 줄입니다 */
+}
+
+.signForm button:active {
+    background-color:  #a38ced; /* 연한 보라색 */
+    transform: translateY(2px); /* 버튼을 클릭할 때 아래로 약간 움직입니다 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 버튼을 클릭할 때 그림자를 더 줄입니다 */
+}
+.signForm span {
+    display: block;
+    margin-top: -7px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.passwordInput {
+    appearance: none ;
+    -webkit-appearance: none ;
+    border-radius: 0 ;
+}
+
+.signAgreement {
+    width: 90%;
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.signAgreement p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.signAgreement label {
+    font-weight: bold;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxContainer input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    accent-color: #a38ced;
+}

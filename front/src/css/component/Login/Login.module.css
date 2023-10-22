@@ -1,0 +1,43 @@
+/* Login.module.css */
+.loginContainer {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.formStack {
+    width: 42%;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.loginButton {
+    max-height: 250px;
+    margin-left: 10px;
+    background-color: #a38ced;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.loginButton:hover {
+    background-color: #53468b; /* 버튼에 호버 효과 색상 */
+}

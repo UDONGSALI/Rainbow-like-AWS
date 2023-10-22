@@ -1,0 +1,48 @@
+.comment{
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 5%;
+}
+
+.commList{
+    margin: 0 auto;
+
+}
+
+.commList td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+
+.commentForm{
+margin-top: 2%;
+}
+
+.commentForm textarea{
+    margin-bottom: -10px;
+}
+
+.comment button {
+    width: 100%;
+    /*margin-top: 15px;*/
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 3px;
+
+    max-width: 60px;
+    margin-left: 20px;
+    align-items: center;
+    text-align: center;
+    background-color: #a38ced;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.comment button:hover {
+        background-color: #53468b;
+}
