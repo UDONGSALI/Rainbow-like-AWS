@@ -101,7 +101,7 @@ public class MemberDto {
         memberDto3.setEmail("labor@lawfirm.com");
         memberDto3.setType(Type.LABOR);
         memberDto3.setGender(Gender.FEMALE);
-        memberDto3.setTel("01023456789");
+        memberDto3.setTel("01012345678");
         memberDto3.setBir(LocalDate.of(1988, 12, 5));
         memberDto3.setAddr("세종특별자치시 나성동 120");
         memberDto3.setAddrDtl("하이빌딩 5층");
@@ -116,7 +116,7 @@ public class MemberDto {
         memberDto4.setEmail("counselor@therapy.com");
         memberDto4.setType(Type.COUNSELOR);
         memberDto4.setGender(Gender.FEMALE);
-        memberDto4.setTel("01034567890");
+        memberDto4.setTel("01012345678");
         memberDto4.setBir(LocalDate.of(1995, 7, 14));
         memberDto4.setAddr("대전광역시 유성구 원신흥동 45");
         memberDto4.setAddrDtl("뉴월드센터 3층");
@@ -131,7 +131,7 @@ public class MemberDto {
         memberDto5.setEmail("cinnamoroll@.sanrio.co.jp");
         memberDto5.setType(Type.ADMIN);
         memberDto5.setGender(Gender.MALE);
-        memberDto5.setTel("01020010306");
+        memberDto5.setTel("01012345678");
         memberDto5.setBir(LocalDate.of(2001, 3, 6));
         memberDto5.setAddr("동교동 190-1");
         memberDto5.setAddrDtl("AK PLAZA 홍대 2층");
@@ -167,7 +167,7 @@ public class MemberDto {
             userDto.setEmail(emails[i] + "mail.com");
             userDto.setType(Type.USER);
             userDto.setGender(i % 2 == 0 ? Gender.MALE : Gender.FEMALE);
-            userDto.setTel("010" + (random.nextInt(8999) + 1000) + (random.nextInt(8999) + 1000));
+            userDto.setTel("01012345678");
             userDto.setBir(LocalDate.of(1985 + random.nextInt(20), random.nextInt(12) + 1, random.nextInt(28) + 1));
             if (random.nextInt(10) < 7) {
                 userDto.setAddr(sejongAddresses[random.nextInt(sejongAddresses.length)] + " " + (i * 10));
@@ -188,7 +188,7 @@ public class MemberDto {
         laborDto.setEmail("labor2@lawfirm.com");
         laborDto.setType(Type.LABOR);
         laborDto.setGender(Gender.MALE);
-        laborDto.setTel("01056781234");
+        laborDto.setTel("01012345678");
         laborDto.setBir(LocalDate.of(1985, 9, 9));
         laborDto.setAddr("세종특별자치시 도담동 345");
         laborDto.setAddrDtl("더존타워 2층");
@@ -204,7 +204,7 @@ public class MemberDto {
         counselorDto.setEmail("counselor2@therapy.com");
         counselorDto.setType(Type.COUNSELOR);
         counselorDto.setGender(Gender.MALE);
-        counselorDto.setTel("01067891234");
+        counselorDto.setTel("01012345678");
         counselorDto.setBir(LocalDate.of(1990, 3, 3));
         counselorDto.setAddr("대전광역시 동구 판암동 12");
         counselorDto.setAddrDtl("스타빌딩 1층");
@@ -213,6 +213,4 @@ public class MemberDto {
         memberDtoList.add(counselorDto);
         return memberDtoList;
     }
-
-
 }

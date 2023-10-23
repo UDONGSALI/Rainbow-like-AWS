@@ -40,8 +40,11 @@ public class EduHistDto {
     static public ArrayList<EduHistDto> createDefaultEduHist(){
         ArrayList<EduHistDto> eduHists = new ArrayList<>();
         for (int i = 2; i <= 20; i++) {
+            if (i == 5 && i%2 ==0){
+                continue;
+            }
             for (int j = 1; j <= 5; j++) {
-                if (j == 1 && i%2 ==0){
+                if (j == 1){
                     continue;
                 }
                 EduHistDto eduHistDto = new EduHistDto();
