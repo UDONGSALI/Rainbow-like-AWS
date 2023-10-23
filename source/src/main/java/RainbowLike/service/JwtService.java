@@ -35,8 +35,7 @@ public class JwtService {
         Optional<Token> existingTokenOptional = tokenRepository.findByMemId(memId);
         if (existingTokenOptional.isPresent()) {
             Token existingToken = existingTokenOptional.get();
-            existingToken.setDelYN(DelYN.Y);
-            tokenRepository.save(existingToken);
+            tokenRepository.delete(existingToken);
         }
 
         Map<String, Object> claims = new HashMap<>();
@@ -62,9 +61,7 @@ public class JwtService {
         tokenEntity.setMemId(memId);
         tokenEntity.setRole(role);
         tokenEntity.setMemNum(memNum);
-        tokenEntity.setDelYN(DelYN.N);
         tokenEntity.setExpirationDate(new Date(System.currentTimeMillis() + EXPIRATIONTIME));
-
         tokenRepository.save(tokenEntity);
     }
 
@@ -89,9 +86,6 @@ public class JwtService {
         return null;
     }
 
-    public Iterable<Token> findAll() {
-        return tokenRepository.findByDelYN(DelYN.N);
-    }
     public Token findByJti(String jti) {
         return tokenRepository.findByJti(jti);
     }

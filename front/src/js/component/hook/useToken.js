@@ -36,14 +36,8 @@ export function useToken() {
             fetch(`${SERVER_URL}token/${jti}`)
                 .then(res => res.text())
                 .then(data => {
-                    if (data === "Y") {
-                        alert("다른 곳에서 로그인 되었습니다!");
-                        deleteTokenFromServer(jti);
-                        sessionStorage.clear();
-                        navigate("/login");
-                    }
-                    else if (!data){
-                        alert("서버에서 로그아웃 되었습니다. 관리자에게 문의 하세요.");
+                  if (!data){
+                        alert("로그아웃 되었습니다.");
                         sessionStorage.clear()
                         navigate("/login");
                     }

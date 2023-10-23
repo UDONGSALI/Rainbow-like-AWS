@@ -23,7 +23,7 @@ public class TokenController {
 
     @GetMapping
     private Iterable<Token> getTokens() {
-        return jwtService.findAll();
+        return tokenRepository.findAll();
     }
 
     @GetMapping("/search/{option}/{value}")
@@ -34,7 +34,7 @@ public class TokenController {
     private ResponseEntity<String> checkTokenStatus(@PathVariable String jti) {
         Token token = jwtService.findByJti(jti);
         if(token != null) {
-            return ResponseEntity.ok(token.getDelYN().name());
+            return ResponseEntity.ok("Yes");
         } else {
             return ResponseEntity.ok(null);
         }

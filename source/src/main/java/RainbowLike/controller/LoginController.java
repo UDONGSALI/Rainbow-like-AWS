@@ -19,6 +19,7 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseEntity<?> getToken(@RequestBody AccountCredentials credentials) {
         String jwts = loginService.generateToken(credentials);
+
         return ResponseEntity.ok()
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + jwts)
                 .header(HttpHeaders.ACCESS_CONTROL_EXPOSE_HEADERS, "Authorization")

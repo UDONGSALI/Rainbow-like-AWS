@@ -1,6 +1,5 @@
 package RainbowLike.entity;
 
-import RainbowLike.constant.DelYN;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,5 +24,4 @@ public class Token {
     private String memId;
     private String role;
     private Date expirationDate;
-    private DelYN delYN;
 }
