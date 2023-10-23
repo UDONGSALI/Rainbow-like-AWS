@@ -15,7 +15,6 @@ const MyActivePage = () => {
                 <Header headerTitle={headerInfo} urlItems={urlData} footerTitle={'활동 내역'}/>
                 <MyActivePost/>
                 <MyActiveComment/>
-                <Footer className={styles.footer}/>
             </div>
 
 

@@ -1,10 +1,8 @@
 import {SERVER_URL} from "../../Common/constants";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import Snackbar from "@mui/material/Snackbar";
 import CustomDataGrid from "../../Common/CustomDataGrid";
 import styles from "../../../../css/component/Mypage/MypageComponent.module.css";
-import File from "../../../../img/component/file.png";
 import Pagination from "../../Common/Pagination";
 
 export default function RentReviewList() {
@@ -62,7 +60,7 @@ export default function RentReviewList() {
         {
             field: 'title',
             headerName: '제목',
-            flex:1,
+            flex: 1,
             headerClassName: styles.customHeader,
             cellClassName: styles.customCell,
 
@@ -141,7 +139,7 @@ export default function RentReviewList() {
         <div id={styles.active}>
             <div className={styles.main}>
                 <div className={styles.posts}>
-                    <div style={{ width: '100%'}}>
+                    <div style={{width: '100%'}}>
                         <CustomDataGrid
                             className={styles.customDataGrid}
                             columns={columns}
@@ -163,19 +161,21 @@ export default function RentReviewList() {
                             prevPageText="<"
                             nextPageText=">"
                         />
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <button onClick={() => navigate('/rent/review/write')}
-                                style={{
-                                    width: "100px",
-                                    height: "40px",
-                                    backgroundColor: "#a38ced",
-                                    color: "#ffffff",
-                                    border:"1px solid #cccccc",
-                                    borderRadius: '5px',
-                                    fontSize: "15px",
-                                    fontWeight: "bold",
-                                    marginTop : "5%",
-                                    marginBottom : "15%" }}>글쓰기</button>
+                        <div style={{display: 'flex', justifyContent: 'center'}}>
+                            <button onClick={() => navigate('/rent/review/write')}
+                                    style={{
+                                        width: "100px",
+                                        height: "40px",
+                                        backgroundColor: "#a38ced",
+                                        color: "#ffffff",
+                                        border: "1px solid #cccccc",
+                                        borderRadius: '5px',
+                                        fontSize: "15px",
+                                        fontWeight: "bold",
+                                        marginTop: "5%",
+                                        marginBottom: "15%"
+                                    }}>글쓰기
+                            </button>
 
                         </div>
                     </div>

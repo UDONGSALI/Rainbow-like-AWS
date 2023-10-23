@@ -1,13 +1,13 @@
-.ftMain{
+.ftMain {
     margin: 0 auto;
-
     max-width: 60%;
     padding: 10px;
     text-align: center;
-
+    background-color: white;
+    border-radius: 20px;
 }
 
-.ftCont{
+.ftCont {
     padding: 20px;
 }
 
@@ -17,7 +17,7 @@
     margin-bottom: 50px;
 }
 
-.ftCont p{
+.ftCont p {
     line-height: 180%;
 }
 

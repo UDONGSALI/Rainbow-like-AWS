@@ -23,6 +23,8 @@ import LaborCell from "./RenderCell/LaborCell";
 import {useLocation, useNavigate} from "react-router-dom";
 import {useConfirm} from "../hook/useConfirm";
 import LoadingContainer from "../Common/LoadingContainer";
+import Wrapper from "../Common/Wrapper";
+import StyledDataGrid from "../Common/StyledDataGrid";
 
 function BoardPostList({ boardNum }) {
     // 1. 상수 정의
@@ -313,97 +315,5 @@ function BoardPostList({ boardNum }) {
         </Wrapper>
     );
 }
-
-const Wrapper = styled.div`
-  width: fit-content;
-  margin: 0 auto;
-`;
-
-const StyledDataGrid = styled(DataGrid)`
-  width: 100%;
-  & .MuiDataGrid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  & .MuiDataGrid-columnHeader {
-    background-color: #ececec;
-  }
-  & .MuiDataGrid-columnHeaderTitle {
-    font-size: 14px;
-  }
-  & .MuiDataGrid-columnHeaderTitleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 10px;
-  }
-  & .MuiDataGrid-cell {
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  button {
-    padding: 3px 5px;
-    margin: 0 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #3498db;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    &:hover {
-      background-color: #2980b9;
-    }
-  }
-  & .MuiDataGrid-cell[data-field="eduName"] {
-    justify-content: left;
-  }
-  & .typeCell {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    &.BUSINESS {
-      color: #855cdc;
-    }
-    &.EDU {
-      color: #1e6bfa;
-    }
-  }
-  & .eduNameCell {
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 280px;
-  }
-  & .statusCell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 8px;
-    border-radius: 3px;
-    &.WAITING {
-      background-color: #a38ced;
-      color: white;
-    }
-    &.PROCESSING {
-      background-color: #53468b;
-      color: white;
-    }
-    &.REGISTRATION_CLOSED {
-      background-color: gray;
-      color: white;
-    }
-    &.REGISTRATION_OPEN {
-      background-color: #5ae507;
-      color: white;
-    }
-  }
-`;
 
 export default memo(BoardPostList);

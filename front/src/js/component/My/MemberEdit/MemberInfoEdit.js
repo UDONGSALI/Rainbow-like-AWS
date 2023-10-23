@@ -308,442 +308,444 @@ export default function MemberInfoEdit() {
     return (
 
         <div id={styles.title}>
-            <div className={styles.main1}>
-                <div className={styles.editProcess}>
-                    <div className={styles.row}>
-                        <div className={styles.col1}>
-                            <p>STEP 01</p><h4>정보입력</h4>
-                            <hr/>
-                        </div>
-                        <div className={styles.col2}>
-                            <img
-                                src="https://storage.googleapis.com/rainbow_like/img/nextButton.png"
-                                alt="이동"
-                                style={{width: "60px", height: "60px"}}/>
-                        </div>
-                        <div className={styles.col3}>
-                            <p>STEP 02</p><h4>수정완료</h4>
-                            <hr/>
+            {/*<div style={{backgroundColor:'white', padding:'20px', borderRadius:'10px'}}>*/}
+                <div className={styles.main1}>
+                    <div className={styles.editProcess}>
+                        <div className={styles.row}>
+                            <div className={styles.col1}>
+                                <p>STEP 01</p><h4>정보입력</h4>
+                                <hr/>
+                            </div>
+                            <div className={styles.col2}>
+                                <img
+                                    src="https://storage.googleapis.com/rainbow_like/img/nextButton.png"
+                                    alt="이동"
+                                    style={{width: "60px", height: "60px"}}/>
+                            </div>
+                            <div className={styles.col3}>
+                                <p>STEP 02</p><h4>수정완료</h4>
+                                <hr/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className={styles.main2}>
-                <h3>필수입력사항</h3>
-                <hr className={styles.main2hr}/>
-                <div className={styles.basicInfo}>
-                    {/*아이디*/}
-                    <div className={styles.userId}>
-                        <div className={styles.container}>
-                            <div className={styles.field}><span>*</span><b>아이디</b></div>
-                            <div> {memberInfo && memberInfo.memId}</div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*비밀번호*/}
-                    <div className={styles.userPwd}>
-                        <div className={styles.container}>
-                            <div className={styles.field}><span>*</span>
-                                <b>비밀번호</b>
+                <div className={styles.main2}>
+                    <h3>필수입력사항</h3>
+                    <hr className={styles.main2hr}/>
+                    <div className={styles.basicInfo}>
+                        {/*아이디*/}
+                        <div className={styles.userId}>
+                            <div className={styles.container}>
+                                <div className={styles.field}><span>*</span><b>아이디</b></div>
+                                <div> {memberInfo && memberInfo.memId}</div>
                             </div>
-                            <div className={styles.userPwdIn}>
-                                <input className={styles.basicInput}
-                                       type={showPassword ? "text" : "password"}
-                                       value={password}
-                                       onChange={handlePasswordChange}
-                                       placeholder="비밀번호 변경시 입력해주세요."
-                                />
-                                <button
-                                    type="button"
-                                    onClick={toggleShowPassword}
-                                    style={{backgroundColor: "white", border: "none"}}
-                                >
-                                    <img
-                                        src={
-                                            showPassword
-                                                ? "https://storage.googleapis.com/rainbow_like/img/PwdShow.png"
-                                                : "https://storage.googleapis.com/rainbow_like/img/PwdHind.png"
-                                        }
-                                        alt={showPassword ? "숨기기" : "보이기"}
-                                        style={{Width: "30px", height: "30px"}}
+                        </div>
+                        <hr/>
+                        {/*비밀번호*/}
+                        <div className={styles.userPwd}>
+                            <div className={styles.container}>
+                                <div className={styles.field}><span>*</span>
+                                    <b>비밀번호</b>
+                                </div>
+                                <div className={styles.userPwdIn}>
+                                    <input className={styles.basicInput}
+                                           type={showPassword ? "text" : "password"}
+                                           value={password}
+                                           onChange={handlePasswordChange}
+                                           placeholder="비밀번호 변경시 입력해주세요."
                                     />
-                                </button>
+                                    <button
+                                        type="button"
+                                        onClick={toggleShowPassword}
+                                        style={{backgroundColor: "white", border: "none"}}
+                                    >
+                                        <img
+                                            src={
+                                                showPassword
+                                                    ? "https://storage.googleapis.com/rainbow_like/img/PwdShow.png"
+                                                    : "https://storage.googleapis.com/rainbow_like/img/PwdHind.png"
+                                            }
+                                            alt={showPassword ? "숨기기" : "보이기"}
+                                            style={{Width: "30px", height: "30px"}}
+                                        />
+                                    </button>
 
-                                <p>영어 대문자, 소문자, 숫자, 특수문자 중 3종류 이상 조합하여 8~16자리로 입력해주세요.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*비밀번호확인*/}
-                    <div className={styles.userPwd}>
-                        <div className={styles.container}>
-                            <div className={styles.field}>
-                                <span>*</span>
-                                <b>비밀번호 확인</b>
-                            </div>
-                            <div className={styles.userPwdIn}>
-                                <input className={styles.basicInput}
-                                       type={showPasswordConfirm ? "text" : "password"}
-                                       value={passwordConfirm}
-                                       onChange={handlePasswordConfirmChange}
-                                       onBlur={handleBlur}
-                                />
-                                <button
-                                    type="button"
-                                    onClick={toggleShowPasswordConfirm}
-                                    style={{backgroundColor: "white", border: "none"}}
-                                >
-                                    <img
-                                        src={
-                                            showPasswordConfirm
-                                                ? "https://storage.googleapis.com/rainbow_like/img/PwdShow.png"
-                                                : "https://storage.googleapis.com/rainbow_like/img/PwdHind.png"
-                                        }
-                                        alt={showPasswordConfirm ? "숨기기" : "보이기"}
-                                        style={{Width: "30px", height: "30px"}}
-                                    />
-                                </button>
-                                {passwordError && (
-                                    <p style={{color: "red"}}>{passwordError}</p>
-                                )}
-                                <p>비밀번호 확인을 위해 다시 한번 입력해 주세요.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*이름*/}
-                    <div className={styles.userName}>
-                        <div className={styles.container}>
-                            <div className={styles.field}><span>*</span><b>이름</b></div>
-                            <div>
-                                {memberInfo && memberInfo.name}</div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*성별*/}
-                    <div className={styles.userGender}>
-                        <div className={styles.container}>
-                            <div className={styles.field}>
-                                <span>*</span><b>성별</b>
-                            </div>
-                            <div className={styles.radio}>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="MALE"
-                                        checked={gender === 'MALE'}
-                                        onChange={() => setGender('MALE')}
-                                    />
-                                    <span>남성</span>
-                                </label>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="FEMALE"
-                                        checked={gender === 'FEMALE'}
-                                        onChange={() => setGender('FEMALE')}
-                                    />
-                                    <span>여성</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*생년월일*/}
-                    <div className={styles.userBir}>
-                        <div className={styles.container}>
-                            <div className={styles.field}>
-                                <span>*</span><b>생년월일</b></div>
-                            <div> {memberInfo && memberInfo.bir}</div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*연락처*/}
-                    <div className={styles.userTel}>
-                        <div className={styles.container}>
-                            <div className={styles.field}><span>*</span><b>연락처</b></div>
-                            <div> {memberInfo && memberInfo.tel}</div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*이메일주소*/}
-                    <div className={styles.userEmail}>
-                        <div className={styles.container}>
-                            <div className={styles.field}>
-                                <span>*</span>
-                                <b>이메일 주소</b></div>
-                            <div>
-                                <input className={styles.basicInput}
-                                       name="email"
-                                       defaultValue={email || (memberInfo && memberInfo.email) || ''}
-                                       onChange={handleEmailChange}
-                                       required
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <hr/>
-                    {/*주소*/}
-                    <div className={styles.userAddr}>
-                        <div className={styles.container}>
-                            <div className={styles.field}><span>*</span><b>주소</b></div>
-                            <div className={styles.addrWrap}>
-                                <div>
-                                    <input className={styles.basicInput}
-                                           name="addrPost"
-                                           onClick={handleClick}
-                                           value={memberInfo && memberInfo.addrPost}
-                                           onChange={handleAddrPostChange}
-                                           placeholder=""
-                                           required/>
-                                </div>
-                                <div>
-                                    <input className={styles.basicInput}
-                                           name="addr"
-                                           onClick={handleClick}
-                                           value={memberInfo && memberInfo.addr}
-                                           onChange={handleAddrChange}
-                                           placeholder=""
-                                           required/>
-                                </div>
-                                <div>
-                                    <input className={styles.basicInput}
-                                           name="addrDtl"
-                                           onChange={handleAddrDtlChange}
-                                           placeholder="상세주소를 입력하세요"
-                                           required/>
+                                    <p>영어 대문자, 소문자, 숫자, 특수문자 중 3종류 이상 조합하여 8~16자리로 입력해주세요.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <hr/>
-                    {/*수신동의*/}
-                    <div className={styles.userSms}>
-                        <div className={styles.container}>
-                            <div className={styles.field}>
-                                <span>*</span>
-                                <b>수신동의여부</b>
-                            </div>
-                            <div>
-                                <label className={styles.checkWrap}>
-                                    <input className={styles.check}
-                                           type="checkbox"
-                                           checked={smsConsent}
-                                           onChange={handleSmsConsentChange}
+                        <hr/>
+                        {/*비밀번호확인*/}
+                        <div className={styles.userPwd}>
+                            <div className={styles.container}>
+                                <div className={styles.field}>
+                                    <span>*</span>
+                                    <b>비밀번호 확인</b>
+                                </div>
+                                <div className={styles.userPwdIn}>
+                                    <input className={styles.basicInput}
+                                           type={showPasswordConfirm ? "text" : "password"}
+                                           value={passwordConfirm}
+                                           onChange={handlePasswordConfirmChange}
+                                           onBlur={handleBlur}
                                     />
-                                    <span>문자수신</span>
-                                </label>
-                                <label className={styles.checkWrap}>
-                                    <input className={styles.check}
-                                           type="checkbox"
-                                           checked={emailConsent}
-                                           onChange={handleEmailConsentChange}
-                                    />
-                                    <span>이메일수신</span>
-                                </label>
+                                    <button
+                                        type="button"
+                                        onClick={toggleShowPasswordConfirm}
+                                        style={{backgroundColor: "white", border: "none"}}
+                                    >
+                                        <img
+                                            src={
+                                                showPasswordConfirm
+                                                    ? "https://storage.googleapis.com/rainbow_like/img/PwdShow.png"
+                                                    : "https://storage.googleapis.com/rainbow_like/img/PwdHind.png"
+                                            }
+                                            alt={showPasswordConfirm ? "숨기기" : "보이기"}
+                                            style={{Width: "30px", height: "30px"}}
+                                        />
+                                    </button>
+                                    {passwordError && (
+                                        <p style={{color: "red"}}>{passwordError}</p>
+                                    )}
+                                    <p>비밀번호 확인을 위해 다시 한번 입력해 주세요.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr/>
-                </div>
-            </div>
-            <div className={styles.main3}>
-                <h3>선택입력사항</h3>
-                <hr className={styles.main3hr}/>
-                <div className={styles.selectInfo}>
-                    <div className={styles.container}>
-                        <div className={styles.field}><b>소속</b></div>
-                        <div><input className={styles.basicInput}/></div>
-                    </div>
-                    <hr/>
-                    <div className={styles.container}>
-                        <div className={styles.field}><b>관심분야</b></div>
-                        <div><select className={styles.basicInput} aria-label="interest">
-                            <option value>선택</option>
-                            <option value="1">여성 취업</option>
-                            <option value="2">여성 창업</option>
-                            <option value="3">교육 프로그램 참여</option>
-                            <option value="4">소모임 등 지원 사업 참여</option>
-                            <option value="5">여성 정책 관련 정보 취득</option>
-                            <option value="6">기타</option>
-                        </select></div>
-                    </div>
-                    <hr/>
-                    <div className={styles.container}>
-                        <div className={styles.field}><b>알게된 경로</b></div>
-                        <div>
-                            <label className={styles.checkWrap}>
-                                <input
-                                    className={styles.check}
-                                    type="checkbox"
-                                    value="세종시청 홈페이지"
-                                    checked={selectedPathways.includes('세종시청 홈페이지')}
-                                    onChange={handleCheckboxChange}
-                                />
-                                세종시청 홈페이지
-                            </label>
-                            <label className={styles.checkWrap}>
-                                <input className={styles.check}
-                                       type="checkbox"
-                                       value="세종시 네이버밴드"
-                                       checked={selectedPathways.includes('세종시 네이버밴드')}
-                                       onChange={handleCheckboxChange}
-                                />
-                                세종시 네이버밴드
-                            </label>
-                            <label className={styles.checkWrap}>
-                                <input className={styles.check}
-                                       type="checkbox"
-                                       value="SNS"
-                                       checked={selectedPathways.includes('SNS')}
-                                       onChange={handleCheckboxChange}
-                                />
-                                SNS
-                            </label>
-                            <label className={styles.checkWrap}>
-                                <input className={styles.check}
-                                       type="checkbox"
-                                       value="뉴스레터"
-                                       checked={selectedPathways.includes('뉴스레터')}
-                                       onChange={handleCheckboxChange}
-                                />
-                                뉴스레터
-                            </label>
-                            <label className={styles.checkWrap}>
-                                <input className={styles.check}
-                                       type="checkbox"
-                                       value="지인소개"
-                                       checked={selectedPathways.includes('지인소개')}
-                                       onChange={handleCheckboxChange}
-                                />
-                                지인소개
-                            </label>
-                            <label>
-                                <input className={styles.check}
-                                       type="checkbox"
-                                       value="기타"
-                                       checked={selectedPathways.includes('기타')}
-                                       onChange={handleCheckboxChange}
-                                />
-                                기타
-                            </label>
+                        <hr/>
+                        {/*이름*/}
+                        <div className={styles.userName}>
+                            <div className={styles.container}>
+                                <div className={styles.field}><span>*</span><b>이름</b></div>
+                                <div>
+                                    {memberInfo && memberInfo.name}</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <hr/>
-            </div>
-            <div className={styles.buttonWrap}>
-                <div className={styles.button}>
-                    <Stack spacing={2} direction="row">
-                        <Button
-                            onClick={redirectToURL1}
-                            style={{
-                                width: "120px",
-                                height: "40px",
-                                backgroundColor: "#3d0c69",
-                                color: "rgb(255,255,255)",
-                                borderRadius: '5px',
-                                fontSize: "15px",
-                                fontWeight: "bold",
-                            }}>취소</Button>
-                    </Stack>
-                </div>
-                <div className={styles.button}>
-                    <Stack spacing={2} direction="row">
-                        <Button
-                            onClick={handleUpdate}
-                            style={{
-                                width: "120px",
-                                height: "40px",
-                                backgroundColor: "#7653fd",
-                                color: "rgb(255,255,255)",
-                                borderRadius: '5px',
-                                fontSize: "15px",
-                                fontWeight: "bold",
-                            }}>입력완료</Button>
-
-                    </Stack>
-                </div>
-                <div className={styles.button}>
-                    <Stack className={styles.modalWrap} spacing={2} direction="row">
-                        <Button
-                            onClick={() => {
-                                redirectToModal();
-                            }}
-                            style={{
-                                width: "120px",
-                                height: "40px",
-                                backgroundColor: "#a38ced",
-                                color: "#ffffff",
-                                borderRadius: '5px',
-                                fontSize: "15px",
-                                fontWeight: "bold",
-                            }}
-                        >
-                            회원탈퇴
-                        </Button>
-                        <Modal
-                            className={styles.modal}
-                            open={openModal}
-                            onClose={handleClose}
-                            aria-labelledby="modalTitle"
-                            aria-describedby="modalDescription"
-                        >
-                            {/* 모달 내용 */}
-
-                            <Box sx={style}>
-                                <div className={styles.modalContent}>
-                                    <Typography className={styles.modalTitle} variant="h6"
-                                                component="h2">
-                                        탈퇴 시 주의사항
-                                    </Typography>
-                                    <Typography className={styles.modalDescription} sx={{mt: 2}}>
-                                        <div>
-                                            <p>회원 탈퇴 후, 해당 회원으로 로그인 할 수 없고 <br/>
-                                                회원정보 및 서비스 이용기록은 삭제됩니다.<br/>
-                                                회원을 탈퇴하시겠습니까?</p>
-
-                                        </div>
-                                    </Typography>
-                                    <div className={style.modalButtonWrap}>
-                                        <Button
-                                            className={styles.modalButton}
-                                            onClick={handleClose}
-                                            style={{
-                                                width: "120px",
-                                                height: "40px",
-                                                backgroundColor: "#3d0c69",
-                                                color: "#ffffff",
-                                                borderRadius: '5px',
-                                                fontSize: "15px",
-                                                fontWeight: "bold",
-                                            }}
-                                        >취소</Button>
-                                        <Button
-                                            className={styles.modalButton}
-                                            onClick={() => {
-                                                deleteMember();
-                                            }}
-                                            style={{
-                                                width: "120px",
-                                                height: "40px",
-                                                backgroundColor: "#a38ced",
-                                                color: "#ffffff",
-                                                borderRadius: '5px',
-                                                fontSize: "15px",
-                                                fontWeight: "bold",
-                                            }}
-                                        >탈퇴</Button>
+                        <hr/>
+                        {/*성별*/}
+                        <div className={styles.userGender}>
+                            <div className={styles.container}>
+                                <div className={styles.field}>
+                                    <span>*</span><b>성별</b>
+                                </div>
+                                <div className={styles.radio}>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="MALE"
+                                            checked={gender === 'MALE'}
+                                            onChange={() => setGender('MALE')}
+                                        />
+                                        <span>남성</span>
+                                    </label>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="gender"
+                                            value="FEMALE"
+                                            checked={gender === 'FEMALE'}
+                                            onChange={() => setGender('FEMALE')}
+                                        />
+                                        <span>여성</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        {/*생년월일*/}
+                        <div className={styles.userBir}>
+                            <div className={styles.container}>
+                                <div className={styles.field}>
+                                    <span>*</span><b>생년월일</b></div>
+                                <div> {memberInfo && memberInfo.bir}</div>
+                            </div>
+                        </div>
+                        <hr/>
+                        {/*연락처*/}
+                        <div className={styles.userTel}>
+                            <div className={styles.container}>
+                                <div className={styles.field}><span>*</span><b>연락처</b></div>
+                                <div> {memberInfo && memberInfo.tel}</div>
+                            </div>
+                        </div>
+                        <hr/>
+                        {/*이메일주소*/}
+                        <div className={styles.userEmail}>
+                            <div className={styles.container}>
+                                <div className={styles.field}>
+                                    <span>*</span>
+                                    <b>이메일 주소</b></div>
+                                <div>
+                                    <input className={styles.basicInput}
+                                           name="email"
+                                           defaultValue={email || (memberInfo && memberInfo.email) || ''}
+                                           onChange={handleEmailChange}
+                                           required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        {/*주소*/}
+                        <div className={styles.userAddr}>
+                            <div className={styles.container}>
+                                <div className={styles.field}><span>*</span><b>주소</b></div>
+                                <div className={styles.addrWrap}>
+                                    <div>
+                                        <input className={styles.basicInput}
+                                               name="addrPost"
+                                               onClick={handleClick}
+                                               value={memberInfo && memberInfo.addrPost}
+                                               onChange={handleAddrPostChange}
+                                               placeholder=""
+                                               required/>
+                                    </div>
+                                    <div>
+                                        <input className={styles.basicInput}
+                                               name="addr"
+                                               onClick={handleClick}
+                                               value={memberInfo && memberInfo.addr}
+                                               onChange={handleAddrChange}
+                                               placeholder=""
+                                               required/>
+                                    </div>
+                                    <div>
+                                        <input className={styles.basicInput}
+                                               name="addrDtl"
+                                               onChange={handleAddrDtlChange}
+                                               placeholder="상세주소를 입력하세요"
+                                               required/>
                                     </div>
                                 </div>
-                            </Box>
-
-                        </Modal>
-                    </Stack>
+                            </div>
+                        </div>
+                        <hr/>
+                        {/*수신동의*/}
+                        <div className={styles.userSms}>
+                            <div className={styles.container}>
+                                <div className={styles.field}>
+                                    <span>*</span>
+                                    <b>수신동의여부</b>
+                                </div>
+                                <div>
+                                    <label className={styles.checkWrap}>
+                                        <input className={styles.check}
+                                               type="checkbox"
+                                               checked={smsConsent}
+                                               onChange={handleSmsConsentChange}
+                                        />
+                                        <span>문자수신</span>
+                                    </label>
+                                    <label className={styles.checkWrap}>
+                                        <input className={styles.check}
+                                               type="checkbox"
+                                               checked={emailConsent}
+                                               onChange={handleEmailConsentChange}
+                                        />
+                                        <span>이메일수신</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
                 </div>
-            </div>
+                <div className={styles.main3}>
+                    <h3>선택입력사항</h3>
+                    <hr className={styles.main3hr}/>
+                    <div className={styles.selectInfo}>
+                        <div className={styles.container}>
+                            <div className={styles.field}><b>소속</b></div>
+                            <div><input className={styles.basicInput}/></div>
+                        </div>
+                        <hr/>
+                        <div className={styles.container}>
+                            <div className={styles.field}><b>관심분야</b></div>
+                            <div><select className={styles.basicInput} aria-label="interest">
+                                <option value>선택</option>
+                                <option value="1">여성 취업</option>
+                                <option value="2">여성 창업</option>
+                                <option value="3">교육 프로그램 참여</option>
+                                <option value="4">소모임 등 지원 사업 참여</option>
+                                <option value="5">여성 정책 관련 정보 취득</option>
+                                <option value="6">기타</option>
+                            </select></div>
+                        </div>
+                        <hr/>
+                        <div className={styles.container}>
+                            <div className={styles.field}><b>알게된 경로</b></div>
+                            <div>
+                                <label className={styles.checkWrap}>
+                                    <input
+                                        className={styles.check}
+                                        type="checkbox"
+                                        value="세종시청 홈페이지"
+                                        checked={selectedPathways.includes('세종시청 홈페이지')}
+                                        onChange={handleCheckboxChange}
+                                    />
+                                    세종시청 홈페이지
+                                </label>
+                                <label className={styles.checkWrap}>
+                                    <input className={styles.check}
+                                           type="checkbox"
+                                           value="세종시 네이버밴드"
+                                           checked={selectedPathways.includes('세종시 네이버밴드')}
+                                           onChange={handleCheckboxChange}
+                                    />
+                                    세종시 네이버밴드
+                                </label>
+                                <label className={styles.checkWrap}>
+                                    <input className={styles.check}
+                                           type="checkbox"
+                                           value="SNS"
+                                           checked={selectedPathways.includes('SNS')}
+                                           onChange={handleCheckboxChange}
+                                    />
+                                    SNS
+                                </label>
+                                <label className={styles.checkWrap}>
+                                    <input className={styles.check}
+                                           type="checkbox"
+                                           value="뉴스레터"
+                                           checked={selectedPathways.includes('뉴스레터')}
+                                           onChange={handleCheckboxChange}
+                                    />
+                                    뉴스레터
+                                </label>
+                                <label className={styles.checkWrap}>
+                                    <input className={styles.check}
+                                           type="checkbox"
+                                           value="지인소개"
+                                           checked={selectedPathways.includes('지인소개')}
+                                           onChange={handleCheckboxChange}
+                                    />
+                                    지인소개
+                                </label>
+                                <label>
+                                    <input className={styles.check}
+                                           type="checkbox"
+                                           value="기타"
+                                           checked={selectedPathways.includes('기타')}
+                                           onChange={handleCheckboxChange}
+                                    />
+                                    기타
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                </div>
+                <div className={styles.buttonWrap}>
+                    <div className={styles.button}>
+                        <Stack spacing={2} direction="row">
+                            <Button
+                                onClick={redirectToURL1}
+                                style={{
+                                    width: "120px",
+                                    height: "40px",
+                                    backgroundColor: "#3d0c69",
+                                    color: "rgb(255,255,255)",
+                                    borderRadius: '5px',
+                                    fontSize: "15px",
+                                    fontWeight: "bold",
+                                }}>취소</Button>
+                        </Stack>
+                    </div>
+                    <div className={styles.button}>
+                        <Stack spacing={2} direction="row">
+                            <Button
+                                onClick={handleUpdate}
+                                style={{
+                                    width: "120px",
+                                    height: "40px",
+                                    backgroundColor: "#7653fd",
+                                    color: "rgb(255,255,255)",
+                                    borderRadius: '5px',
+                                    fontSize: "15px",
+                                    fontWeight: "bold",
+                                }}>입력완료</Button>
+
+                        </Stack>
+                    </div>
+                    <div className={styles.button}>
+                        <Stack className={styles.modalWrap} spacing={2} direction="row">
+                            <Button
+                                onClick={() => {
+                                    redirectToModal();
+                                }}
+                                style={{
+                                    width: "120px",
+                                    height: "40px",
+                                    backgroundColor: "#a38ced",
+                                    color: "#ffffff",
+                                    borderRadius: '5px',
+                                    fontSize: "15px",
+                                    fontWeight: "bold",
+                                }}
+                            >
+                                회원탈퇴
+                            </Button>
+                            <Modal
+                                className={styles.modal}
+                                open={openModal}
+                                onClose={handleClose}
+                                aria-labelledby="modalTitle"
+                                aria-describedby="modalDescription"
+                            >
+                                {/* 모달 내용 */}
+
+                                <Box sx={style}>
+                                    <div className={styles.modalContent}>
+                                        <Typography className={styles.modalTitle} variant="h6"
+                                                    component="h2">
+                                            탈퇴 시 주의사항
+                                        </Typography>
+                                        <Typography className={styles.modalDescription} sx={{mt: 2}}>
+                                            <div>
+                                                <p>회원 탈퇴 후, 해당 회원으로 로그인 할 수 없고 <br/>
+                                                    회원정보 및 서비스 이용기록은 삭제됩니다.<br/>
+                                                    회원을 탈퇴하시겠습니까?</p>
+
+                                            </div>
+                                        </Typography>
+                                        <div className={style.modalButtonWrap}>
+                                            <Button
+                                                className={styles.modalButton}
+                                                onClick={handleClose}
+                                                style={{
+                                                    width: "120px",
+                                                    height: "40px",
+                                                    backgroundColor: "#3d0c69",
+                                                    color: "#ffffff",
+                                                    borderRadius: '5px',
+                                                    fontSize: "15px",
+                                                    fontWeight: "bold",
+                                                }}
+                                            >취소</Button>
+                                            <Button
+                                                className={styles.modalButton}
+                                                onClick={() => {
+                                                    deleteMember();
+                                                }}
+                                                style={{
+                                                    width: "120px",
+                                                    height: "40px",
+                                                    backgroundColor: "#a38ced",
+                                                    color: "#ffffff",
+                                                    borderRadius: '5px',
+                                                    fontSize: "15px",
+                                                    fontWeight: "bold",
+                                                }}
+                                            >탈퇴</Button>
+                                        </div>
+                                    </div>
+                                </Box>
+
+                            </Modal>
+                        </Stack>
+                    </div>
+                </div>
+            {/*</div>*/}
         </div>
 
     )

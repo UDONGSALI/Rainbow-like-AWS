@@ -83,8 +83,6 @@ function FTCDtl(props) {
                     </>
                     : null}
 
-
-
                 {isModalOpen && (
                     <FTMModal onClose={closeModal} ftcNum = {id} />
                 )}

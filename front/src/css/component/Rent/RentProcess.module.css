@@ -1,21 +1,21 @@
 
-#title{
+#title {
     position: relative;
     margin-top: 5%;
     padding-right: 20%;
     padding-left: 20%;
-    font-family:'IBM Plex Sans KR', sans-serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
     font-size: 15px;
 }
 
 
-#title > li{
+#title > li {
     list-style: none;
     margin-bottom: 10px;
 
 }
 
-#title h2{
+#title h2 {
     margin-top: 5%;
     text-align: center;
     font-size: 40px;
@@ -24,26 +24,24 @@
 
 /*대관 신청 절차 부분*/
 
-#title > .main1{
-
+#title > .main1 {
 }
 
-#title > .main1 > h3{
+#title > .main1 > h3 {
     margin-top: 5%;
     font-size: 25px;
     font-weight: bold;
 }
 
 
-
-#title > .main1 > .boxWrap{
-width: 100%;
+#title > .main1 > .boxWrap {
+    width: 100%;
 
 }
 
 
-#title> .main1 > .boxWrap > .boxStyle > h2{
-    font-size : 25px;
+#title > .main1 > .boxWrap > .boxStyle > h2 {
+    font-size: 25px;
     width: 100%;
     margin-top: 30px;
     padding: 10px;
@@ -58,66 +56,65 @@ width: 100%;
     width: 100%;
 }
 
-#title > .main2 > h3{
+#title > .main2 > h3 {
     margin-top: 5%;
     font-size: 25px;
     font-weight: bold;
 
 }
 
-#title > .main2 > .table{
+#title > .main2 > .table {
     margin-top: 20px;
-    padding : 0;
+    padding: 0;
     table-layout: fixed;
     width: 100%;
 }
 
 
-
-#title > .main2 > .table > .rentTime > .tableHeader > .col1{
+#title > .main2 > .table > .rentTime > .tableHeader > .col1 {
     background: rgba(225, 174, 255, 0.43);
-    border: 1px solid  #ba68c8;
+    border: 1px solid #ba68c8;
 
 
 }
 
 #title > .main2 > .table > .rentTime > .tableHeader > .col1 > td {
-    padding : 15px;
-    border: 1px solid  #ba68c8;
+    padding: 15px;
+    border: 1px solid #ba68c8;
     width: 50%;
 
 
 }
 
-#title > .main2 > .table > .rentTime > .tableHeader > .col1 > td > b{
-   font-size: 20px;
+#title > .main2 > .table > .rentTime > .tableHeader > .col1 > td > b {
+    font-size: 20px;
 
 }
 
-#title > .main2 > .table > .rentTime > .tableBody > .col2{
+#title > .main2 > .table > .rentTime > .tableBody > .col2 {
     background: rgba(253, 246, 255, 0.49);
-    border: 1px solid  #ba68c8;
+    border: 1px solid #ba68c8;
 }
 
-#title > .main2 > .table > .rentTime > .tableBody > .col2 >td {
+#title > .main2 > .table > .rentTime > .tableBody > .col2 > td {
     padding-top: 25px;
     padding-bottom: 20px;
-    border: 1px solid  #ba68c8;
+    border: 1px solid #ba68c8;
 
 }
 
-#title > .main2 > .table > .rentTime > .tableBody > .col2 >td >p{
+#title > .main2 > .table > .rentTime > .tableBody > .col2 > td > p {
     font-size: 18px;
 
 }
 
-#title > .main2 > p{
+#title > .main2 > p {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
 }
 
-#title > .main2 > p >span{
+#title > .main2 > p > span {
     font-size: 16px;
     color: red;
     font-weight: bold;
@@ -131,7 +128,7 @@ width: 100%;
 
 }
 
-#title > .main3 > h3{
+#title > .main3 > h3 {
     margin-top: 5%;
     margin-bottom: 10px;
     font-size: 25px;
@@ -139,44 +136,41 @@ width: 100%;
 
 }
 
-#title > .main3 > p{
+#title > .main3 > p {
     font-size: 15px;
     margin-bottom: 30px;
 
 
-
 }
 
 
-
-#title > .main3 > .rentFeeStandard >b{
+#title > .main3 > .rentFeeStandard > b {
     padding-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    color : #8757B8;
+    color: #8757B8;
 
 }
 
-#title > .main3 > .rentFeeStandard > li{
+#title > .main3 > .rentFeeStandard > li {
     list-style: none;
     margin: 10px 0px;
     margin-left: 10px;
 
 
-
 }
 
-#title > .main3 > .rentFeeAccept >b{
+#title > .main3 > .rentFeeAccept > b {
     padding-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    color : #8757B8;
+    color: #8757B8;
 
 
 }
 
 
-#title > .main3 > .rentFeeAccept > li{
+#title > .main3 > .rentFeeAccept > li {
     list-style: none;
     margin: 10px 0px;
     margin-left: 10px;
@@ -184,15 +178,15 @@ width: 100%;
 }
 
 
-#title > .main3 > .rentFeeReturn >b{
+#title > .main3 > .rentFeeReturn > b {
     padding-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    color : #8757B8;
+    color: #8757B8;
 
 }
 
-#title > .main3 > .rentFeeReturn > li{
+#title > .main3 > .rentFeeReturn > li {
     list-style: none;
     margin: 10px 0px;
     margin-left: 10px;
@@ -205,7 +199,7 @@ width: 100%;
     margin-top: 3%;
 }
 
-#title > .main4 > h3{
+#title > .main4 > h3 {
     margin-top: 5%;
     margin-bottom: 2%;
     font-size: 25px;
@@ -215,18 +209,16 @@ width: 100%;
 
 /*대관신청 버튼 부분*/
 
-  #title > .buttonWrap >.button{
-      display :flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      margin-top: 5%;
-      margin-bottom: 10%;
+#title > .buttonWrap > .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
 
 
-
-
-  }
+}
 
 
 

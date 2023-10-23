@@ -120,7 +120,7 @@ function MatchingPopup() {
 
 
     return (
-        <div>
+        <div style={{backgroundColor:'white'}}>
         <div className={styles.FTList}>
             <FTWList ftcNum={ftcNum} checkedRows={checkedRows} setCheckedRows={setCheckedRows} />
 

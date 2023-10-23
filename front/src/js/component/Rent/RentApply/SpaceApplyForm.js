@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import {SERVER_URL} from "../../Common/constants";
@@ -468,7 +467,7 @@ function SpaceApplyForm({onSelectdInfo}) {
             <RentStatus/>
             <RentCalendar onSelectDate={handleDateSelect}/>
 
-            <div style={{marginRight: "20%", marginLeft: "20%", marginBottom: "10%"}}>
+            <div style={{marginRight: "20%", marginLeft: "20%", marginBottom: "10%", backgroundColor: 'white'}}>
 
                 {loadingSpaces ? (
                     <p>Loading....</p>

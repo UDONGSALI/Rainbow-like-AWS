@@ -211,7 +211,7 @@ export default function RentCalendar ({ onSelectDate }) {
                     events={events}
                     titleAccessor={(event) => `${event.title} (${moment(event.start).format("HH:mm")} - ${moment(event.end).format("HH:mm")})`}
                     tooltipAccessor={(event) => `${event.title} (${moment(event.start).format("HH:mm")} - ${moment(event.end).format("HH:mm")})`}
-                    style={{ height: 800, width: "60%" }}
+                    style={{ height: 800, width: "60%", backgroundColor: 'white' }}
                     eventPropGetter={eventStyleGetter}
                     views={["month"]}
                     onNavigate={handleNavigate}
@@ -221,7 +221,7 @@ export default function RentCalendar ({ onSelectDate }) {
                     }}
                 />
             </div>
-            <div className="rentDate" style={{ display: "flex", marginLeft: "20%", marginRight: "20%", marginBottom: "1%" }}>
+            <div className="rentDate" style={{ display: "flex", marginLeft: "20%", marginRight: "20%", marginBottom: "1%", backgroundColor: 'white' }}>
                 <h2>대관일자 <b>ㅣ</b></h2>
                 {selectedDate ? (
                     <h4 style={{ textAlign: "center", marginLeft: "1%", marginTop: "2px" }}>{moment(selectedDate).format("YYYY-MM-DD")}</h4>

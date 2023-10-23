@@ -75,7 +75,7 @@ export default function RentProcess() {
 
     return (
         <div id={styles.title}>
-
+            <div style={{backgroundColor: 'white', borderRadius: '10px'}}>
             <div className={styles.main1}><h3>대관 신청 절차</h3>
                 <div className={styles.boxWrap}>
                     <Box className={styles.boxStyle} sx={{
@@ -465,7 +465,7 @@ export default function RentProcess() {
                     fontWeight: "bold",
                 }}>대관신청하기</Button>
             </Stack>
-
+            </div>
         </div>
     );
 }

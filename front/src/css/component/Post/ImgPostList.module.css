@@ -6,6 +6,7 @@
     justify-content: space-between;
     width: 60%; /* 전체 페이지의 60% 너비로 설정 */
     margin: 0 auto; /* 페이지를 가운데로 정렬 */
+    background-color: white;
 }
 
 /* 게시글 썸네일 스타일 */

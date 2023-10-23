@@ -70,7 +70,8 @@ export default function Pay() {
             marginTop: '25px',
             marginLeft:'25px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-            borderRadius:'5px'
+            borderRadius:'5px',
+            backgroundColor:'white'
         }}>
             <div style={{
                 width:'80%',

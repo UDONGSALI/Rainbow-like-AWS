@@ -5,9 +5,9 @@ function AgenHistory() {
 
     return (
         <div className={styles.agenHistory2}>
-                <h3><strong>연혁</strong></h3>
-                <img src={History_logo} alt="세종여성플라자" style={{width: '10%'}}/>
                 <div className={styles.area}>
+                    <h3><strong>연혁</strong></h3>
+                    <img src={History_logo} alt="세종여성플라자" style={{width: '15%', margin:'2%'}}/>
                     <div className={styles.histArea}>
                         <div className={styles.left}>
                         </div>

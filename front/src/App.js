@@ -121,6 +121,7 @@ function App() {
     const {trackButtonClick, trackPageView} = useTracking(memId);
     const location = useLocation();
     const isPaymentRoute = location.pathname.includes("/pay/");
+    const isFtPOPRoute = location.pathname.includes("/ftmpop/");
     const isChatRoute = location.pathname.includes("/chat");
     const [selectedBgImage, setSelectedBgImage] = useState("");
 
@@ -161,7 +162,7 @@ function App() {
              style={{ backgroundImage: `url(${selectedBgImage})`, /*backgroundSize:'100%', backgroundPosition:'center center', backgroundRepeat:"no-repeat"*/}}
              onClick={trackButtonClick}>
 
-            {!isPaymentRoute && !isChatRoute && <CustomNavbar memId={memId} isAdmin={isAdmin} jti={jti}/>}
+            {!isPaymentRoute && !isChatRoute &&  !isFtPOPRoute && <CustomNavbar memId={memId} isAdmin={isAdmin} jti={jti}/>}
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
 
@@ -272,7 +273,7 @@ function App() {
 
             </Routes>
 
-            {!isPaymentRoute && !isChatRoute && <Footer/>}
+            {!isPaymentRoute && !isChatRoute && !isFtPOPRoute && <Footer/>}
         </div>);
 }
 

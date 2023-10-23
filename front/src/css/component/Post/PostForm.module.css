@@ -9,6 +9,8 @@
 
 .postFormContainer {
     width: 60%; /* 폼 컨테이너의 가로를 60%로 설정 */
+    background-color: white;
+    border-radius: 20px;
 }
 
 .formHeader {

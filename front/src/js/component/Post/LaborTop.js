@@ -7,10 +7,10 @@ function LaborTop() {
     return (
         <>
             <div className={styles.laborTop}>
-                <div className={styles.laborImg}  >
-                    <img src={LaborImg}  alt={"imgFalse"}/>
+                <div className={styles.laborImg}>
+                    <img src={LaborImg} alt={"imgFalse"}/>
                 </div>
-                <div className={styles.const} >
+                <div className={styles.const}>
                     <div className={styles.constText}>
                         <p>
                             <strong>설립목적</strong>
@@ -55,15 +55,15 @@ function LaborTop() {
                     </ul>
                 </div>
             </div>
-            <div className={styles.noticeBorderBox} >
+            <div className={styles.noticeBorderBox}>
                 <div className={styles.noticeTitle}>
-                    <strong >노무 상담 게시판 필독사항</strong>
+                    <strong>노무 상담 게시판 필독사항</strong>
                 </div>
                 <p className={styles.noticeCont}>이 곳은 직장맘들을 위한 노무상담 게시판입니다.<br/>
                     상담을 원하는 내용을 상세히 작성해 주시면 노무사가 검토 후 답변해 드립니다.
                     <br/>＊상담 내용 검토 등으로 인해 답변에 시간이 걸릴 수 있습니다.</p>
             </div>
-            </>
+        </>
     );
 }
 

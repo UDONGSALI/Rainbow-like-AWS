@@ -150,13 +150,13 @@ function FTWList({ ftcNum, checkedRows, setCheckedRows }) {
                 headerAlign: 'center',
                 renderCell: (params) => (
                     <div className={styles.btn}>
-                    <button
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => onEditClick(params)}
-                    >
-                        {params.value}
-                        수정
-                    </button>
+                        <button
+                            style={{ cursor: 'pointer' }}
+                            onClick={() => onEditClick(params)}
+                        >
+                            {params.value}
+                            수정
+                        </button>
                     </div>
                 ),
             },
@@ -173,11 +173,11 @@ function FTWList({ ftcNum, checkedRows, setCheckedRows }) {
                 renderCell: (params) => (
                     <div className={styles.btn}>
 
-                    <button
-                        onClick={() => onDelClick(params.row)}
-                    >
-                        삭제
-                    </button>
+                        <button
+                            onClick={() => onDelClick(params.row)}
+                        >
+                            삭제
+                        </button>
                     </div>
                 ),
             }
@@ -248,7 +248,7 @@ function FTWList({ ftcNum, checkedRows, setCheckedRows }) {
     const onRowClick = (params) => {
         const rowId = params.row.ftWorkerNum;
         if (ftmMode) {
-            const popupWindow = window.open(`/ftw/${rowId}`, '_blank', 'width=1000,height=600');
+            const popupWindow = window.open(`/ftw/dtl/${rowId}`, '_blank', 'width=1000,height=600');
         } else {
             navigate(`/ftw/dtl/${rowId}`);
         }
@@ -279,30 +279,29 @@ function FTWList({ ftcNum, checkedRows, setCheckedRows }) {
                     <ul>
                         {Object.keys(checkedRows).map(rowId => (
                             <li key={rowId}>
-                                {rowId}: {posts.find(post => post.ftWorkerNum === parseInt(rowId))?.member.name},　
-                                {posts.find(post => post.ftWorkerNum === parseInt(rowId))?.speField},　
+                                {rowId}: {posts.find(post => post.ftWorkerNum === parseInt(rowId))?.member.name},
+                                {posts.find(post => post.ftWorkerNum === parseInt(rowId))?.speField},
                                 {posts.find(post => post.ftWorkerNum === parseInt(rowId))?.member.email}
                             </li>
                         ))}
                     </ul>
                 </div>
                 :
-                <div className={styles.btn}>
-                <button onClick={() => {
-                    const path = isAdmin ? '/admin/ftmain' : '/ftmain';
-                    navigate(path);
-                }}>
-                    DB 메인
-                </button>
+                <div class={styles.btn}>
+                    <button onClick={() => {
+                        const path = isAdmin ? '/admin/ftmain' : '/ftmain';
+                        navigate(path);
+                    }}>
+                        DB 메인
+                    </button>
                 </div>
             }
             <CustomDataGrid
                 className={styles.customDataGrid}
                 columns={columns}
-                      rows={posts}
-                      disableRowSelectionOnClick={true}
-                      getRowId={row => row.ftWorkerNum}
-                onRowClick={onRowClick}
+                rows={posts}
+                disableRowSelectionOnClick={true}
+                getRowId={row => row.ftWorkerNum}
                 pageSize={5} // 페이지당 5개의 행을 보여줍니다.
                 components={{
                     NoRowsOverlay: CustomNoRowsOverlay
@@ -315,8 +314,6 @@ function FTWList({ ftcNum, checkedRows, setCheckedRows }) {
                     },
                 ]}
             />
-
-
         </div>
     );
 }

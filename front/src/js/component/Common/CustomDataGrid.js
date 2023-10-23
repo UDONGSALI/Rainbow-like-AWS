@@ -12,7 +12,7 @@ const CustomDataGrid = (props) => {
         </div>
     );
 
-    return <DataGrid components={{...components, footer: CustomFooter}} {...otherProps} />;
+    return <DataGrid components={{...components, footer: CustomFooter}} {...otherProps} style={{backgroundColor: 'white'}} />;
 };
 
 export default CustomDataGrid;

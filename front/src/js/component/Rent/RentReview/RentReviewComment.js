@@ -270,7 +270,7 @@ export default function RentReviewComment() {
 
     return (
         <div>
-            <div style={{width: "100%", maxHeight: "100%"}}>
+            <div style={{width: "100%", maxHeight: "100%", backgroundColor: 'white'}}>
                 <div
                     style={{
                         width: "100%",

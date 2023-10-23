@@ -273,6 +273,9 @@ const StyledDataGrid = styled(DataGrid)`
   & .MuiDataGrid-columnHeader {
     background-color: #ececec;
   }
+  & .MuiDataGrid-cell {
+    background-color:white ;
+  }
 `;
 
 const CenteredData = styled.div`

@@ -142,20 +142,19 @@ function EduApply(props) {
                 return fetch(SERVER_URL + 'eduHist', {
                     method: 'POST',
                     body: formData,
-                });
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error applying for the education');
-                }
-                return response.text();
-            })
-            .then(data => {
-                window.alert(data);  // 성공 메시지 출력
-                navigate(`/edu/list/detail/${eduNum}`);
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Error applying for the education');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        window.alert(data);  // 성공 메시지 출력
+                        navigate(`/edu/list/detail/${eduNum}`);
+                    })
             })
             .catch(error => {
-                // 이미 신청했거나, 다른 오류 발생 시 이곳에서 처리
                 if (error.message !== 'Already applied') {
                     console.error('Error:', error);
                     alert('신청 중 오류가 발생했습니다.');
@@ -189,132 +188,132 @@ function EduApply(props) {
     }
 
     return (
-            <div className={styles.eduApplyContainer}>
-                {eduData ? (
-                    <div>
-                        <div className={styles.eduInfo}>
-                            <h3><strong>{eduData.eduName}</strong></h3>
-                            <p><strong>교육 일시 :</strong> {formatEduDate(eduData.eduStdt, eduData.eduEddt)}</p>
-                            <p><strong>장소 :</strong> {eduData.eduAddr}</p>
-                            <p><strong>대상 :</strong> {eduData.target}</p>
-                            <p><strong>모집 인원 :</strong> {eduData.recuPerson}/{eduData.capacity}</p>
-                            <p><strong>신청 기간 :</strong> {eduData.recuStdt} ~ {eduData.recuEddt}</p>
-                        </div>
-                        {isWithinApplicationPeriod(eduData.recuStdt, eduData.recuEddt) ? (
-                            eduData.recuPerson >= eduData.capacity ? (
-                                <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
-                                    <h2>정원이 초과 되었습니다!</h2>
-                                </div>
-                            ) : (
-                                <div>
-                                    <br/>
-                                    <strong><h4>약관 동의</h4></strong>
-                                    <hr/>
-                                    <div>
-                                        <h5>
-                                            <strong>개인정보 수집 및 이용 약관
-                                                <span style={{color: '#53468b', fontSize: '15pt'}}> (필수)</span>
-                                            </strong>
-                                        </h5>
-                                        <div className={styles.termsDetail}>
-                                            <p>
-                                                <strong>1. 개인정보의 수집,이용 목적<br/></strong>
-                                                - 세종여성플라자는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br/>
-                                                - 교육신청, 공간대관 등 신청/운영 관리<br/><br/>
-
-                                                <strong>2. 수입하는 개인정보의 항목<br/></strong>
-                                                - 세종여성플라자는 법령의 규정과 정보주체의 동의에 의해서만 개인정보를 수집,보유 하고 있습니다.<br/>
-                                                - 세종여성플라자가 법령의 규정에 근거하여 수집,보유하고 있는 개인정보 항목은 다음과 같습니다.<br/>
-                                                - 구분: 필수 항목<br/>
-                                                - 개인정보의 항목: 성명,생년월일,연락처(휴대폰),이메일주소<br/><br/>
-
-                                                <strong>3. 개인정보의 보유 및 이용기간: 회원 탈퇴 시까지<br/></strong>
-                                                - 세종여성플라자에서 처리하는 개인정보는 수집,이용 목적으로 명시한 범위 내에서 처리하며, 개인정보보호법 등 관련 법령에서 정한
-                                                보유기관을
-                                                준용하고
-                                                있습니다.<br/>
-                                                - 세종여성플라자는 원칙적으로 보유기간이 경과하였거나 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이
-                                                파기합니다.<br/><br/>
-
-                                                <strong>4. 정보 주체는 이용자로서 개인정보 수집, 이용을 동의하지 않을 수 있습니다. 단 동의를 거부할 경우 교육,
-                                                    공간대관
-                                                    신청이
-                                                    제한됩니다.<br/><br/></strong>
-
-                                                <strong>5. 기타 개인정보와 관련된 사항은 홈페이지에 공개된 개인정보처리방침을 준수합니다.</strong>
-                                            </p>
-                                        </div>
-                                        <div className={styles.checkboxContainer}>
-                                            <input
-                                                type="checkbox"
-                                                checked={isFirstCheckboxChecked}
-                                                onChange={(e) => setIsFirstCheckboxChecked(e.target.checked)}
-                                            />
-                                            <span>개인정보 수집 및 이용에 동의합니다.</span>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <div>
-                                        <h5>
-                                            <strong>초상권 사용 동의
-                                                <span style={{color: '#808080', fontSize: '15pt'}}> (선택)</span>
-                                            </strong>
-                                        </h5>
-                                        <div className={styles.checkboxContainer}>
-                                            <input
-                                                type="checkbox"
-                                                checked={isSecondCheckboxChecked}
-                                                onChange={(e) => setIsSecondCheckboxChecked(e.target.checked)}
-                                            />
-                                            <span>세종여성플라자의 교육 및 사업 진행시 사진 및 영상 촬영을 할 수 있으며, 본인이 촬영된 사진과 영상을 세종여성플라자의 홍보제작물에 사용하는 것에 동의합니다.</span>
-                                        </div>
-                                    </div>
-                                    <br/>
-                                    <strong><h4>신청자 정보</h4></strong>
-                                    <hr/>
-                                    <div className={styles.memInfo}>
-                                        <Stack spacing={2}>
-                                            <TextField
-                                                label="이름"
-                                                type="text"
-                                                name="name"
-                                                value={formData.name}
-                                                readOnly
-                                            />
-                                            <TextField
-                                                label="이메일"
-                                                type="email"
-                                                name="email"
-                                                value={formData.email}
-                                                readOnly
-                                            />
-                                            <TextField
-                                                label="전화번호"
-                                                type="tel"
-                                                name="phoneNumber"
-                                                value={formData.tel}
-                                                readOnly
-                                            />
-                                            <FileUpload onFileChange={handleFileChange}
-                                                        noFileMessage="신청서 파일이 있는 경우 다운로드 받아 신청내역을 작성 후 업로드 해주세요."
-                                                        maxSize={3} maxCount={10}/>
-                                        </Stack>
-                                    </div>
-                                    <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
-                                        <button type="submit" onClick={handleSubmit}>교육 신청</button>
-                                    </div>
-                                </div>
-                            )
-                        ) : (
-                            <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
-                                <h2>신청 기간이 아닙니다!</h2>
-                            </div>
-                        )}
+        <div className={styles.eduApplyContainer}>
+            {eduData ? (
+                <div>
+                    <div className={styles.eduInfo}>
+                        <h3><strong>{eduData.eduName}</strong></h3>
+                        <p><strong>교육 일시 :</strong> {formatEduDate(eduData.eduStdt, eduData.eduEddt)}</p>
+                        <p><strong>장소 :</strong> {eduData.eduAddr}</p>
+                        <p><strong>대상 :</strong> {eduData.target}</p>
+                        <p><strong>모집 인원 :</strong> {eduData.recuPerson}/{eduData.capacity}</p>
+                        <p><strong>신청 기간 :</strong> {eduData.recuStdt} ~ {eduData.recuEddt}</p>
                     </div>
-                ) : (
-                    <p>Loading...</p>
-                )}
-            </div>
+                    {isWithinApplicationPeriod(eduData.recuStdt, eduData.recuEddt) ? (
+                        eduData.recuPerson >= eduData.capacity ? (
+                            <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
+                                <h2>정원이 초과 되었습니다!</h2>
+                            </div>
+                        ) : (
+                            <div>
+                                <br/>
+                                <strong><h4>약관 동의</h4></strong>
+                                <hr/>
+                                <div>
+                                    <h5>
+                                        <strong>개인정보 수집 및 이용 약관
+                                            <span style={{color: '#53468b', fontSize: '15pt'}}> (필수)</span>
+                                        </strong>
+                                    </h5>
+                                    <div className={styles.termsDetail}>
+                                        <p>
+                                            <strong>1. 개인정보의 수집,이용 목적<br/></strong>
+                                            - 세종여성플라자는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br/>
+                                            - 교육신청, 공간대관 등 신청/운영 관리<br/><br/>
+
+                                            <strong>2. 수입하는 개인정보의 항목<br/></strong>
+                                            - 세종여성플라자는 법령의 규정과 정보주체의 동의에 의해서만 개인정보를 수집,보유 하고 있습니다.<br/>
+                                            - 세종여성플라자가 법령의 규정에 근거하여 수집,보유하고 있는 개인정보 항목은 다음과 같습니다.<br/>
+                                            - 구분: 필수 항목<br/>
+                                            - 개인정보의 항목: 성명,생년월일,연락처(휴대폰),이메일주소<br/><br/>
+
+                                            <strong>3. 개인정보의 보유 및 이용기간: 회원 탈퇴 시까지<br/></strong>
+                                            - 세종여성플라자에서 처리하는 개인정보는 수집,이용 목적으로 명시한 범위 내에서 처리하며, 개인정보보호법 등 관련 법령에서 정한
+                                            보유기관을
+                                            준용하고
+                                            있습니다.<br/>
+                                            - 세종여성플라자는 원칙적으로 보유기간이 경과하였거나 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이
+                                            파기합니다.<br/><br/>
+
+                                            <strong>4. 정보 주체는 이용자로서 개인정보 수집, 이용을 동의하지 않을 수 있습니다. 단 동의를 거부할 경우 교육,
+                                                공간대관
+                                                신청이
+                                                제한됩니다.<br/><br/></strong>
+
+                                            <strong>5. 기타 개인정보와 관련된 사항은 홈페이지에 공개된 개인정보처리방침을 준수합니다.</strong>
+                                        </p>
+                                    </div>
+                                    <div className={styles.checkboxContainer}>
+                                        <input
+                                            type="checkbox"
+                                            checked={isFirstCheckboxChecked}
+                                            onChange={(e) => setIsFirstCheckboxChecked(e.target.checked)}
+                                        />
+                                        <span>개인정보 수집 및 이용에 동의합니다.</span>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div>
+                                    <h5>
+                                        <strong>초상권 사용 동의
+                                            <span style={{color: '#808080', fontSize: '15pt'}}> (선택)</span>
+                                        </strong>
+                                    </h5>
+                                    <div className={styles.checkboxContainer}>
+                                        <input
+                                            type="checkbox"
+                                            checked={isSecondCheckboxChecked}
+                                            onChange={(e) => setIsSecondCheckboxChecked(e.target.checked)}
+                                        />
+                                        <span>세종여성플라자의 교육 및 사업 진행시 사진 및 영상 촬영을 할 수 있으며, 본인이 촬영된 사진과 영상을 세종여성플라자의 홍보제작물에 사용하는 것에 동의합니다.</span>
+                                    </div>
+                                </div>
+                                <br/>
+                                <strong><h4>신청자 정보</h4></strong>
+                                <hr/>
+                                <div className={styles.memInfo}>
+                                    <Stack spacing={2}>
+                                        <TextField
+                                            label="이름"
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            readOnly
+                                        />
+                                        <TextField
+                                            label="이메일"
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            readOnly
+                                        />
+                                        <TextField
+                                            label="전화번호"
+                                            type="tel"
+                                            name="phoneNumber"
+                                            value={formData.tel}
+                                            readOnly
+                                        />
+                                        <FileUpload onFileChange={handleFileChange}
+                                                    noFileMessage="신청서 파일이 있는 경우 다운로드 받아 신청내역을 작성 후 업로드 해주세요."
+                                                    maxSize={3} maxCount={10}/>
+                                    </Stack>
+                                </div>
+                                <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
+                                    <button type="submit" onClick={handleSubmit}>교육 신청</button>
+                                </div>
+                            </div>
+                        )
+                    ) : (
+                        <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
+                            <h2>신청 기간이 아닙니다!</h2>
+                        </div>
+                    )}
+                </div>
+            ) : (
+                <p>Loading...</p>
+            )}
+        </div>
     );
 }
 

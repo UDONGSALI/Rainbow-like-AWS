@@ -245,7 +245,7 @@ function PostNoticeList(props) {
     ];
 
     return (
-        <div style={{width:"fit-content", margin:'0 auto'}}>
+        <div style={{width:"fit-content", margin:'0 auto', backgroundColor:'white', borderRadius:'10px'}}>
             <div style={{
                 display: 'flex', flexDirection: 'column',
                 alignItems: 'center'

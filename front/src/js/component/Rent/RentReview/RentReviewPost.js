@@ -112,7 +112,7 @@ const RentReviewDetails = () => {
 
     // 데이터가 로드되면 UI를 렌더링
     return (
-        <div id={styles.review} style={{width: "100%"}}>
+        <div id={styles.review} style={{width: "100%", }}>
             <div style={{
                 width: "100%",
                 display: "flex",
@@ -156,7 +156,7 @@ const RentReviewDetails = () => {
             </div>
 
             {/*게시글*/}
-            <div className={styles.postBox} style={{width: "100%", height: "700px"}}>
+            <div className={styles.postBox} style={{width: "100%", height: "700px", backgroundColor: 'white'}}>
                 <div className={styles.titleWrap}>
                     <div className={styles.title}>
                         <h2><b>제목</b> {postDetails.title}</h2>

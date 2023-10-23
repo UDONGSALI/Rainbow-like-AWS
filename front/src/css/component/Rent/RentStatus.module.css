@@ -21,7 +21,8 @@
     padding : 0;
     table-layout: fixed;
     width: 100%;
-
+    background-color: white;
+    border-radius: 5px;
 }
 
 /*공간대관 범례*/
