@@ -67,9 +67,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // URL 기반의 CORS 구성 소스를 생성합니다.
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        // CORS 구성을 생성하고 특정 origin (http://localhost:3000)으로부터의 요청을 허용합니다.
+        // 배포한 프론트 엔드 주소의 요청을 허용합니다.
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("*"));
+        config.setAllowedOrigins(Arrays.asList(
+                "http://rainbow-like.com/",
+                "https://rainbow-like.com/",
+                "http://rainbow-react.s3-website.ap-northeast-2.amazonaws.com/",
+                "https://rainbow-react.s3-website.ap-northeast-2.amazonaws.com/"
+        ));
+
 
         // 모든 HTTP 메서드를 허용합니다.
         config.setAllowedMethods(Arrays.asList("*"));

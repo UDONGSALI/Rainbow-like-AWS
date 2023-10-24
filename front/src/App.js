@@ -159,7 +159,7 @@ function App() {
 
     return (
         <div className="App"
-             style={{ backgroundImage: `url(${selectedBgImage})`, /*backgroundSize:'100%', backgroundPosition:'center center', backgroundRepeat:"no-repeat"*/}}
+             style={{ backgroundImage: `url(${selectedBgImage})`}}
              onClick={trackButtonClick}>
 
             {!isPaymentRoute && !isChatRoute &&  !isFtPOPRoute && <CustomNavbar memId={memId} isAdmin={isAdmin} jti={jti}/>}
@@ -172,20 +172,20 @@ function App() {
                 <Route path="/search" element={<SearchPage/>}/>
 
                 {/*관리자*/}
-                <Route path="/admin/member" element={isAdmin ? <MemManagePage/> : null}/>
-                <Route path="/admin/edu" element={isAdmin ? <EduListPage type="admin"/> : null}/>
-                <Route path="/admin/edu/add" element={isAdmin ? <EduAddPage/> : null}/>
-                <Route path="/admin/edu/edit/:eduNum" element={isAdmin ? <EduEditPage/> : null}/>
-                <Route path="/admin/eduHist" element={isAdmin ? <EduHistListPage memId={memId} type="admin"/> : null}/>
+                <Route path="/admin/member" element={isAdmin ? <MemManagePage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/edu" element={isAdmin ? <EduListPage type="admin"/>  : <Navigate to="/" replace />} />
+                <Route path="/admin/edu/add" element={isAdmin ? <EduAddPage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/edu/edit/:eduNum" element={isAdmin ? <EduEditPage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/eduHist" element={isAdmin ? <EduHistListPage memId={memId} type="admin"/>  : <Navigate to="/" replace />} />
                 <Route path="/admin/rentHist"
-                       element={isAdmin ? <RentHistListPage memId={memId} type="admin"/> : null}/>
-                <Route path="/admin/pay" element={isAdmin ? <PayListPage/> : null}/>
-                <Route path="/admin/org" element={isAdmin ? <OrgListPage/> : null}/>
-                <Route path="/admin/board" element={isAdmin ? <BoardListPage/> : null}/>
-                <Route path="/admin/board/post/:boardNum" element={isAdmin ? <BoardPostListPage/> : null}/>
-                <Route path="admin/ftmain" element={isAdmin ? <FTMainPage type="admin"/> : null}/>
-                <Route path="admin/ftmain/ftw/:id" element={isAdmin ? <FTWDtlPage type="admin"/> : null}/>
-                <Route path="/admin/log" element={isAdmin ? <LogListPage/> : null}/>
+                       element={isAdmin ? <RentHistListPage memId={memId} type="admin"/> : <Navigate to="/" replace />} />
+                <Route path="/admin/pay" element={isAdmin ? <PayListPage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/org" element={isAdmin ? <OrgListPage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/board" element={isAdmin ? <BoardListPage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/board/post/:boardNum" element={isAdmin ? <BoardPostListPage/>  : <Navigate to="/" replace />} />
+                <Route path="admin/ftmain" element={isAdmin ? <FTMainPage type="admin"/> : <Navigate to="/" replace />} />
+                <Route path="admin/ftmain/ftw/:id" element={isAdmin ? <FTWDtlPage type="admin"/>  : <Navigate to="/" replace />} />
+                <Route path="/admin/log" element={isAdmin ? <LogListPage/> : <Navigate to="/" replace />} />
 
                 {/*기관소개*/}
                 <Route path="/intro" element={<IntroPage/>}/>
@@ -259,18 +259,20 @@ function App() {
                 <Route path="/ftc/new" element={memId ? <FTCFormPage/> : <Navigate to="/login" replace/>}/>
                 <Route path="/ftc/dtl/:id" element={<FTCDtlPage/>}/>
                 <Route path="/ftc/edit/:id" element={<FTCEditPage/>}/>
-                <Route path="/admin/ftmain/ftw" element={isAdmin ? <FTWListPage/> : null}/>
-                <Route path="/admin/ftmain/ftc" element={isAdmin ? <FTCListPage/> : null}/>
-                <Route path="/ftmpop/:ftcNum" element={isAdmin ? <MatchingPopup/> : null}/>
+                <Route path="/admin/ftmain/ftw" element={isAdmin ? <FTWListPage/> : <Navigate to="/" replace />} />
+                <Route path="/admin/ftmain/ftc" element={isAdmin ? <FTCListPage/> : <Navigate to="/" replace />} />
+                <Route path="/ftmpop/:ftcNum" element={isAdmin ? <MatchingPopup/> : <Navigate to="/" replace />} />
 
                 {/*SMS*/}
-                <Route path="/sms" element={isAdmin ? <SMSPage/> : null}/>
+                <Route path="/sms" element={isAdmin ? <SMSPage/> : <Navigate to="/" replace />} />
 
                 {/*챗봇 / 채팅*/}
                 <Route path="/chat" element={<ChatBot/>}/>
                 <Route path="/chat/:memNum" element={<Chatting/>}/>
-                <Route path="/listchat" element={<ChatPage/>}/>
+                <Route path="/listchat" element={isAdmin ? <ChatPage/> : <Navigate to="/" replace />} />
 
+                {/*기타 주소 메인으로 리 다이렉트*/}
+                <Route path="*" element={<Navigate to="/" replace />}/>
             </Routes>
 
             {!isPaymentRoute && !isChatRoute && !isFtPOPRoute && <Footer/>}

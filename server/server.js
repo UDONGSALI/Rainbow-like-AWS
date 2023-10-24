@@ -1,12 +1,19 @@
 const { Server } = require("socket.io");
 
+const { URL } = require('url');
+
 const io = new Server(3000, {
     cors: {
         origin: function (origin, callback) {
-            if (origin.startsWith("http://rainbow-react.s3-website.ap-northeast-2.amazonaws.com")) {
-                callback(null, true);
-            } else {
-                callback(new Error('Not allowed by CORS'));
+            try {
+                const originHostname = new URL(origin).hostname;
+                if (originHostname === 'rainbow-like.com') {
+                    callback(null, true);
+                } else {
+                    callback(new Error('Not allowed by CORS'));
+                }
+            } catch (err) {
+                callback(new Error('Invalid origin format'));
             }
         }
     },
