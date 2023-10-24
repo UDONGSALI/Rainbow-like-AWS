@@ -1,10 +1,17 @@
 const { Server } = require("socket.io");
 
-const io = new Server(5000, {
+const io = new Server(3000, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: function (origin, callback) {
+            if (origin.startsWith("http://rainbow-react.s3-website.ap-northeast-2.amazonaws.com")) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        }
     },
 });
+
 // 1
 const clients = new Map();
 io.sockets.on("connection", (socket) => {

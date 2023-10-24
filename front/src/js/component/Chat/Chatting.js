@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { SERVER_URL } from "../Common/constants";
 import { io } from "socket.io-client";
 
-const webSocket = io("http://localhost:5000");
+const webSocket = io("http://15.164.176.188:3000");
 
 function Chatting({ param }) {
     const [chatData, setChatData] = useState([]);
