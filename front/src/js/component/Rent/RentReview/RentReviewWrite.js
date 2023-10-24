@@ -60,24 +60,16 @@ export default function RentReviewWrite() {
                     title: formData.title,
                     content: formData.content,
                     delYN: formData.delYN,
-
                 }),
-
             });
-
             if (response.ok) {
-                alert('정말 게시글을 등록하겠습니까?');
+                const responseData = await response.json(); // 응답 본문 추출
                 alert('게시글 등록에 성공했습니다.');
+                navigate(`/rent/review/post/${responseData.postNum}`)
             }
-
             if (!response.ok) {
                 throw new Error('게시글 등록에 실패했습니다');
             }
-
-            // 성공적으로 업데이트된 게시글을 가져와서 상태를 갱신
-            const updatedData = await response.json();
-            setUpdatedPost(updatedData);
-
         } catch (error) {
             console.error(error);
             alert('게시글 등록에 실패했습니다');
@@ -254,7 +246,6 @@ export default function RentReviewWrite() {
                     }}>등록
                     </button>
                     <button type="button" onClick={() => navigate('/rent/review')}
-                            onClick={handleUpdateButtonClick}
                             style={{
                                 width: "100px",
                                 height: "40px",

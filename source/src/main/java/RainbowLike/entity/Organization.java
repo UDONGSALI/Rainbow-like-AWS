@@ -21,7 +21,6 @@ public class Organization {
 
     private String url;
 
-    @Column(nullable = false, length = 30)
     private String tel;
 
     @Column(nullable = false)

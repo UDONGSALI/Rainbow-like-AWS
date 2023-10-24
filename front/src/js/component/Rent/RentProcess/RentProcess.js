@@ -75,7 +75,7 @@ export default function RentProcess() {
 
     return (
         <div id={styles.title}>
-            <div style={{backgroundColor: 'white', borderRadius: '10px'}}>
+
             <div className={styles.main1}><h3>대관 신청 절차</h3>
                 <div className={styles.boxWrap}>
                     <Box className={styles.boxStyle} sx={{
@@ -218,12 +218,12 @@ export default function RentProcess() {
                 <h3>대관 운영 시간</h3>
                 <div className={styles.table}>
                     <table className={styles.rentTime}
-                    style={{
-                        width:'100%',
-                        textAlign: 'center',
-                        padding: '10px',
-                        position: 'relative',
-                    }}>
+                           style={{
+                               width:'100%',
+                               textAlign: 'center',
+                               padding: '10px',
+                               position: 'relative',
+                           }}>
                         <colgroup>
                             <col className={styles.colStyle} />
                             <col className={styles.colStyle}/>
@@ -456,16 +456,16 @@ export default function RentProcess() {
                 <Button className={styles.button}
                         onClick={redirectToURL}
                         style={{
-                    width: "150px",
-                    height: "50px",
-                    backgroundColor: "#a38ced",
-                    color: "rgb(255,255,255)",
-                    borderRadius: '5px',
-                    fontSize: "20px",
-                    fontWeight: "bold",
-                }}>대관신청하기</Button>
+                            width: "150px",
+                            height: "50px",
+                            backgroundColor: "#a38ced",
+                            color: "rgb(255,255,255)",
+                            borderRadius: '5px',
+                            fontSize: "20px",
+                            fontWeight: "bold",
+                        }}>대관신청하기</Button>
             </Stack>
-            </div>
+
         </div>
     );
 }

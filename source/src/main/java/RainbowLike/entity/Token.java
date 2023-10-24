@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -19,9 +16,14 @@ public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tokenNum;
+    @Column(nullable = false)
     private String jti;
+    @Column(nullable = false)
     private Long memNum;
+    @Column(nullable = false)
     private String memId;
+    @Column(nullable = false)
     private String role;
+    @Column(nullable = false)
     private Date expirationDate;
 }

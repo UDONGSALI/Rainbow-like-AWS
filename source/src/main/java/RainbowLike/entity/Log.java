@@ -28,10 +28,6 @@ public class Log {
     @Column(nullable = false)
     private String url;
 
-    private String endpoint;
-
-    private String method;
-
     private String label;
 
     @ManyToOne

@@ -14,6 +14,7 @@ export default function RentReviewEdit() {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [updatedPost, setUpdatedPost]=useState({});
     const [formData, setFormData] = useState({
+        postNum: '',
         memNum: '',
         boardNum: 6,
         title: '',
@@ -58,6 +59,7 @@ export default function RentReviewEdit() {
                     // 필요한 필드만 업데이트
                     setFormData(prevFormData => ({
                         ...prevFormData,
+                        postNum: data.postNum,
                         title: data.title,
                         content: data.content,
                         parentsNum: data.parentsNum,
@@ -80,6 +82,7 @@ export default function RentReviewEdit() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    postNum:formData.postNum,
                     memNum: formData.memNum,
                     boardNum: formData.boardNum,
                     title: formData.title,
