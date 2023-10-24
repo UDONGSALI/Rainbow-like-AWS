@@ -15,6 +15,7 @@ import java.util.ArrayList;
 @Setter
 public class PostFormDto {
 
+    private Long postNum;
     private Long memNum;
     @JsonIgnore
     private Member member;

@@ -44,6 +44,7 @@ public class PostService {
         return postRepository.save(post);
     }
 
+
     public Post createPost(PostFormDto postFormDto) {
         Post newPost = mapper.map(postFormDto, Post.class);
 

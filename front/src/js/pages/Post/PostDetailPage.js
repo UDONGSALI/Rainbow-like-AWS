@@ -36,8 +36,15 @@ function PostDetailPage() {
         }
     }, [boardNum]);
 
-    //7,8번 게시판 상세 글 접근 권한 설정
+    // 7,8번 게시판 상세 글 접근 권한 설정
     useEffect(() => {
+        // memNum이 없을 경우 로그인 알림 후 리턴
+        if (!memNum) {
+            alert("로그인이 필요한 페이지입니다.");
+            navigate('/login');  // 로그인 페이지로 이동. 실제 경로에 따라 수정 필요.
+            return;
+        }
+
         fetch(`${SERVER_URL}post/${postNum}`)
             .then(response => response.json())
             .then(data => {
@@ -52,7 +59,6 @@ function PostDetailPage() {
                     };
 
                     fetchParentDataIfNeeded().then(parentData => {
-
                         const isAllowed = () => {
                             if (board.boardNum == 8) {
                                 return isAdmin || isCounselor ||

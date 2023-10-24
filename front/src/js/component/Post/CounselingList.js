@@ -109,6 +109,7 @@ function CounselingList(props) {
         }
         return name;
     }
+
     const currentStart = totalItemsCount - (activePage - 1) * itemsCountPerPage;
     const columns = [
         {
@@ -136,10 +137,12 @@ function CounselingList(props) {
                 const parentPost = params.row.parentsNum ? postsWithFiles.find(post => post.postNum === params.row.parentsNum) : null;
                 let isClickable = false;
 
-                if (boardNumber === 7) {
-                    isClickable = isAdmin || params.row.labor?.memNum == memNum || params.row.member?.memNum == memNum || (parentPost && parentPost?.member?.memNum == memNum);
-                } else if (boardNumber === 8) {
-                    isClickable = isAdmin || isCounselor || params.row.member?.memNum == memNum || (parentPost && parentPost?.member?.memNum == memNum);
+                if (memNum) {  // memNum이 null이 아닌지 확인
+                    if (boardNumber == 7) {
+                        isClickable = isAdmin || params.row.labor?.memNum == memNum || params.row.member?.memNum == memNum || (parentPost && parentPost?.member?.memNum == memNum);
+                    } else if (boardNumber == 8) {
+                        isClickable = isAdmin || isCounselor || params.row.member?.memNum == memNum || (parentPost && parentPost?.member?.memNum == memNum);
+                    }
                 }
 
                 return (
@@ -216,15 +219,15 @@ function CounselingList(props) {
                 return (
                     <CenteredData>
                         <StyledCell>
-                        {row.value && row.value[0] && ( // 첫 번째 파일만 확인
-                            <div style={{width: '24px', height: '24px', marginRight: '8px'}}>
-                                <img
-                                    src={File}
-                                    alt='file'
-                                    style={{maxWidth: '100%', maxHeight: '100%'}}
-                                />
-                            </div>
-                        )}
+                            {row.value && row.value[0] && ( // 첫 번째 파일만 확인
+                                <div style={{width: '24px', height: '24px', marginRight: '8px'}}>
+                                    <img
+                                        src={File}
+                                        alt='file'
+                                        style={{maxWidth: '100%', maxHeight: '100%'}}
+                                    />
+                                </div>
+                            )}
                         </StyledCell>
                     </CenteredData>
                 );

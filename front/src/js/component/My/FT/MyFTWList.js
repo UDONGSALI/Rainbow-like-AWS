@@ -1,4 +1,4 @@
-
+MyFTWList
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {SERVER_URL} from "../../Common/constants";
@@ -78,7 +78,7 @@ export default function MyFTWList() {
         {
             field: "speField",
             headerName: "분야",
-            width: 300,
+            width: 200,
             headerClassName: styles.customHeader,
             cellClassName: styles.customCell,
             align: 'center',
@@ -88,7 +88,7 @@ export default function MyFTWList() {
         {
             field: "writeDate",
             headerName: "신청일시",
-            width: 200,
+            width: 100,
             headerClassName: styles.customHeader,
             cellClassName: styles.customCell,
             align: 'center',
@@ -114,19 +114,22 @@ export default function MyFTWList() {
 
         },
         {
-            field: "ftDtl",
+            field: "statusDtl",
             headerName: "상세 내용",
             flex: 1,
             headerClassName: styles.customHeader,
             cellClassName: styles.customCell,
-            renderCell: (params) => (
-                <div
-                    style={{cursor: "pointer"}}
-                    onClick={() => onRowClick(params)}
-                >
-                    {params.value}
-                </div>
-            ),
+            align: 'center',
+            headerAlign: 'center',
+            valueGetter: (params) => {
+                // Check if ftStatus is equal to "승인"
+                if (params.row.ftStatus === "승인") {
+                    return "인재 등록이 완료되었습니다.";
+                } else {
+                    // If not approved, you can return other details or an empty string
+                    return params.row.statusDtl || "";
+                }
+            },
         },
     ].map(col => ({ ...col, sortable: false }));
 

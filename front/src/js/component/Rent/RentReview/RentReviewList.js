@@ -138,6 +138,23 @@ export default function RentReviewList() {
 
         <div id={styles.active}>
             <div className={styles.main}>
+                <div style={{display: 'flex', justifyContent: 'right'}}>
+                    <button onClick={() => navigate('/rent/review/write')}
+                            style={{
+                                width: "100px",
+                                height: "40px",
+                                backgroundColor: "#a38ced",
+                                color: "#ffffff",
+                                border: "1px solid #cccccc",
+                                borderRadius: '5px',
+                                fontSize: "15px",
+                                fontWeight: "bold",
+                                marginTop: "3%",
+                                marginBottom:"1%"
+                            }}>글쓰기
+                    </button>
+
+                </div>
                 <div className={styles.posts}>
                     <div style={{width: '100%'}}>
                         <CustomDataGrid
@@ -161,23 +178,7 @@ export default function RentReviewList() {
                             prevPageText="<"
                             nextPageText=">"
                         />
-                        <div style={{display: 'flex', justifyContent: 'center'}}>
-                            <button onClick={() => navigate('/rent/review/write')}
-                                    style={{
-                                        width: "100px",
-                                        height: "40px",
-                                        backgroundColor: "#a38ced",
-                                        color: "#ffffff",
-                                        border: "1px solid #cccccc",
-                                        borderRadius: '5px',
-                                        fontSize: "15px",
-                                        fontWeight: "bold",
-                                        marginTop: "5%",
-                                        marginBottom: "15%"
-                                    }}>글쓰기
-                            </button>
 
-                        </div>
                     </div>
                 </div>
             </div>
