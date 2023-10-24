@@ -1,10 +1,7 @@
 package RainbowLike.dto;
 
-import RainbowLike.constant.FtmYN;
 import RainbowLike.entity.FtConsumer;
 import RainbowLike.entity.FtWorker;
-import RainbowLike.entity.Member;
-import RainbowLike.entity.QFtConsumer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,11 +22,11 @@ public class FtmDto {
     private LocalDateTime writeDate;
 
 
-    public FtmDto(){
+    public FtmDto() {
 
     }
 
-    public FtmDto(Long ftWorkerNum, Long ftConsumerNum, LocalDateTime writeDate){
+    public FtmDto(Long ftWorkerNum, Long ftConsumerNum, LocalDateTime writeDate) {
         this.ftWorkerNum = ftWorkerNum;
         this.ftConsumerNum = ftConsumerNum;
         this.writeDate = writeDate;
