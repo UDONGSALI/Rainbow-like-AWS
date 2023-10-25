@@ -7,7 +7,7 @@ const io = new Server(3000, {
         origin: function (origin, callback) {
             try {
                 const originHostname = new URL(origin).hostname;
-                if (originHostname === 'rainbow-like.s3-website.ap-northeast-2.amazonaws.com') {
+                if (originHostname === 'rainbow-like.com') {
                     callback(null, true);
                 } else {
                     callback(new Error('Not allowed by CORS'));
