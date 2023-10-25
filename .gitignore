@@ -224,11 +224,10 @@ $RECYCLE.BIN
 # Windows shortcuts
 .lnk
 
-
 .jar
+
+.json
 
 build/
 
 source/target/
-
-.json
