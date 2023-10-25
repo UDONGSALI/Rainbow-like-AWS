@@ -72,8 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         config.setAllowedOrigins(Arrays.asList(
                 "http://rainbow-like.com/",
                 "https://rainbow-like.com/",
-                "http://rainbow-react.s3-website.ap-northeast-2.amazonaws.com/",
-                "https://rainbow-react.s3-website.ap-northeast-2.amazonaws.com/"
+                "http://rainbow-like.s3-website.ap-northeast-2.amazonaws.com/"
         ));
 
 
