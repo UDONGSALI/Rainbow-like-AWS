@@ -43,7 +43,7 @@ public class FileController {
     @PostMapping
     public ResponseEntity<String> uploadFiles(@RequestParam("file") List<MultipartFile> files, @RequestParam("tableName") String tableName, @RequestParam("number") Long number) {
         try {
-            fileService.uploadFilesAndGetFileNums(files, tableName, number);
+            fileService.uploadToCloudAndGetFileNums(files, tableName, number);
             return ResponseEntity.ok("파일 업로드 성공");
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,7 +54,7 @@ public class FileController {
     @PostMapping("/FileNums")
     public ResponseEntity<List<Long>> uploadAndGetFileNums(@RequestParam("file") List<MultipartFile> files, @RequestParam("tableName") String tableName, @RequestParam("number") Long number) {
         try {
-            List<Long> fileNums = fileService.uploadFilesAndGetFileNums(files, tableName, number);
+            List<Long> fileNums = fileService.uploadToCloudAndGetFileNums(files, tableName, number);
             return ResponseEntity.ok(fileNums);
         } catch (IOException e) {
             e.printStackTrace();

@@ -67,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // URL 기반의 CORS 구성 소스를 생성합니다.
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        // CORS 구성을 생성하고 특정 origin (http://localhost:3000)으로부터의 요청을 허용합니다.
+        // 모든 요청을 허용, AWS 에서 설정
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(Arrays.asList("*"));
 

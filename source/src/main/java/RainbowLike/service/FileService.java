@@ -83,12 +83,7 @@ public class FileService {
             restTemplate.delete(deleteUrl);
         }
     }
-
-    public List<Long> uploadFilesAndGetFileNums(List<MultipartFile> files, String tableName, Long number) throws IOException {
-        return uploadToCloudAndGetFileNums(files, tableName, number);
-    }
-
-    private List<Long> uploadToCloudAndGetFileNums(List<MultipartFile> files, String tableName, Long number) throws IOException {
+    public List<Long> uploadToCloudAndGetFileNums(List<MultipartFile> files, String tableName, Long number) throws IOException {
         PathAndEntities pathAndEntities = determineMidPath(tableName, number);
 
         // Set up Google Cloud Storage

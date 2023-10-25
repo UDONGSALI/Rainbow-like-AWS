@@ -63,7 +63,7 @@ public class EduHistService {
 
         // 파일이 제공되면 해당 파일도 저장
         if (files != null && !files.isEmpty()) {
-            fileService.uploadFilesAndGetFileNums(files, tableName, number);
+            fileService.uploadToCloudAndGetFileNums(files, tableName, number);
         }
         return "신청이 완료 되었습니다!";
     }

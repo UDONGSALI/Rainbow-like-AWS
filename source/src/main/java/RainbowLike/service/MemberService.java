@@ -59,7 +59,7 @@ public class MemberService implements UserDetailsService {
         saveMember(memberDto);
 
         if (files != null && !files.isEmpty()) {
-            fileService.uploadFilesAndGetFileNums(files, tableName, number);
+            fileService.uploadToCloudAndGetFileNums(files, tableName, number);
         }
         return "가입이 완료 되었습니다!";
     }

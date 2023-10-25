@@ -1,11 +1,17 @@
+const express = require('express');
+const http = require('http');
 const { Server } = require("socket.io");
 
-const io = new Server(5000, {
+const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
-    },
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
 });
-// 1
+
 const clients = new Map();
 io.sockets.on("connection", (socket) => {
     console.log("user connected");
@@ -29,4 +35,8 @@ io.sockets.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("user disconnected");
     });
+});
+
+server.listen(6000, () => {
+    console.log('Server is running on port 6000');
 });
