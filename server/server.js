@@ -1,17 +1,25 @@
-const express = require('express');
-const http = require('http');
 const { Server } = require("socket.io");
 
-const app = express();
-const server = http.createServer(app);
+const { URL } = require('url');
 
-const io = new Server(server, {
+const io = new Server(3000, {
     cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
-    }
+        origin: function (origin, callback) {
+            try {
+                const originHostname = new URL(origin).hostname;
+                if (originHostname === 'rainbow-like.com') {
+                    callback(null, true);
+                } else {
+                    callback(new Error('Not allowed by CORS'));
+                }
+            } catch (err) {
+                callback(new Error('Invalid origin format'));
+            }
+        }
+    },
 });
 
+// 1
 const clients = new Map();
 io.sockets.on("connection", (socket) => {
     console.log("user connected");
@@ -35,8 +43,4 @@ io.sockets.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("user disconnected");
     });
-});
-
-server.listen(6000, () => {
-    console.log('Server is running on port 6000');
 });

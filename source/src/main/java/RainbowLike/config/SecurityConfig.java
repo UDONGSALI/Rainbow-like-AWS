@@ -67,9 +67,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // URL 기반의 CORS 구성 소스를 생성합니다.
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        // 모든 요청을 허용, AWS 에서 설정
+        // 배포한 프론트 엔드 주소의 요청을 허용합니다.
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("*"));
+        config.setAllowedOrigins(Arrays.asList(
+                "http://rainbow-like.com/",
+                "https://rainbow-like.com/",
+                "http://rainbow-react.s3-website.ap-northeast-2.amazonaws.com/",
+                "https://rainbow-react.s3-website.ap-northeast-2.amazonaws.com/"
+        ));
+
 
         // 모든 HTTP 메서드를 허용합니다.
         config.setAllowedMethods(Arrays.asList("*"));
