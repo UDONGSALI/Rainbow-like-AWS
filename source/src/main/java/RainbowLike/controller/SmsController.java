@@ -18,6 +18,7 @@ import net.nurigo.sdk.message.request.SingleMessageSendingRequest;
 import net.nurigo.sdk.message.response.SingleMessageSentResponse;
 import net.nurigo.sdk.message.service.DefaultMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,8 +30,11 @@ import java.util.*;
 @RequiredArgsConstructor
 public class SmsController {
 
-    private final String apiKey = "NCSB52VZNJWSSRPP";
-    private final String apiSecret = "KNLBRR4PSHSL7QERAHM2SD6WQMNK3VZ4";
+    @Value("${API_KEY}")
+    private String apiKey;
+
+    @Value("${API_SECRET}")
+    private String apiSecret;
 
     private final DefaultMessageService messageService;
 

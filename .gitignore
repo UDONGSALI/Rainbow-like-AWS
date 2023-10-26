@@ -226,7 +226,7 @@ $RECYCLE.BIN
 
 .jar
 
-.json
+*.json
 
 build/
 
