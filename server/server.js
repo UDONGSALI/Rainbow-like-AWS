@@ -1,25 +1,30 @@
-const { Server } = require("socket.io");
+const fs = require('fs');
+const express = require('express');
+const { Server } = require('socket.io');
+const { createServer } = require('https');
 
-const { URL } = require('url');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/socket.rainbow-like-back.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/socket.rainbow-like-back.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/socket.rainbow-like-back.com/chain.pem', 'utf8');
 
-const io = new Server(3000, {
+const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+};
+
+const app = express();
+const httpServer = createServer(credentials, app);
+const io = new Server(httpServer, {
     cors: {
-        origin: function (origin, callback) {
-            try {
-                const originHostname = new URL(origin).hostname;
-                if (originHostname === 'rainbow-like.com') {
-                    callback(null, true);
-                } else {
-                    callback(new Error('Not allowed by CORS'));
-                }
-            } catch (err) {
-                callback(new Error('Invalid origin format'));
-            }
-        }
+        origin: '*'
     },
 });
 
-// 1
+app.get('/healthcheck', (req, res) => {
+    res.status(200).send('OK');
+});
+
 const clients = new Map();
 io.sockets.on("connection", (socket) => {
     console.log("user connected");
@@ -40,7 +45,9 @@ io.sockets.on("connection", (socket) => {
         clients.set(data.userId, socket.id);
         socket.to(data.roomNumber).emit("sLogin", data);
     });
-    socket.on("disconnect", () => {
-        console.log("user disconnected");
-    });
 });
+httpServer.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+
+

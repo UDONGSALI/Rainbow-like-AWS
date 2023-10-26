@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {DataGrid} from "@mui/x-data-grid";
 import Snackbar from '@mui/material/Snackbar';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {SERVER_URL} from "../Common/constants";
 import File from "../../../img/component/file.png";
 import styled from '@emotion/styled';
@@ -18,7 +18,7 @@ const SEARCH_OPTIONS = [
 ];
 
 function PostNoticeList(props) {
-    const {boardNum} = props;
+    const {boardNum} = useParams()
     const isAdmin = sessionStorage.getItem("role") === "ADMIN";
     const {deletePost} = useDeletePost(); // 삭제 훅
     const [files, setFiles] = useState([]);
@@ -34,7 +34,7 @@ function PostNoticeList(props) {
     const indexOfFirstPost = indexOfLastPost - itemsCountPerPage;
     const pageRangeDisplayed = 5;
 
-    //검색관련
+    //데이터 호출
     const {data: fetchedPosts, loadingPosts} = useFetch(`${SERVER_URL}post/board/${boardNum}`);
     const {data: fetchedFiles, filesLoading} = useFetch(SERVER_URL + 'files/table/post', []);
     const {searchTerm, setSearchTerm, handleSearch} = useSearch(`${SERVER_URL}post/${boardNum}`, setPosts);
@@ -267,12 +267,6 @@ function PostNoticeList(props) {
                     getRowId={getRowId}
                     hideFooter={true}
                 />
-                <Snackbar
-                    open={open}
-                    autoHideDuration={2000}
-                    onClose={() => setOpen(false)}
-                    message="게시글을 지웠습니다."
-                />
                 {isAdmin && (
                     <NewPost onClick={() => navigate('/post/new', {state: {mode: "create", boardNum}})}>
                         등록
@@ -294,7 +288,7 @@ function PostNoticeList(props) {
 }
 const StyledDataGrid = styled(DataGrid)`
   & .MuiDataGrid-columnHeader {
-    background-color: #ececec;
+    background-color: #E7DDFAFF;
   }
 `;
 

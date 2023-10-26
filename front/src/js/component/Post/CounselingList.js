@@ -14,7 +14,6 @@ function CounselingList(props) {
     const isCounselor = sessionStorage.getItem("role") === "COUNSELOR";
     const [files, setFiles] = useState([]);
     const [posts, setPosts] = useState([]);
-    const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
     //페이지관련
@@ -82,6 +81,7 @@ function CounselingList(props) {
         });
     });
 
+// 게시글을 제목 클릭할 때 호출되는 함수
     const onRowClick = (params) => {
         const rowId = params.row.postNum;
         const boardNumber = params.row.board.boardNum;
@@ -102,7 +102,7 @@ function CounselingList(props) {
         }
     }
 
-    // USER의 작성자 이름은 첫 글자만 가져오게
+    // USER의 이름을 마스킹 처리하는 함수 (성만 나오게)
     const maskName = (name, type) => {
         if (type === "USER" && name && name.length > 1) {
             return name[0] + '*'.repeat(name.length - 1);
@@ -137,7 +137,7 @@ function CounselingList(props) {
                 const parentPost = params.row.parentsNum ? postsWithFiles.find(post => post.postNum === params.row.parentsNum) : null;
                 let isClickable = false;
 
-                if (memNum) {  // memNum이 null이 아닌지 확인
+                if (memNum) {
                     if (boardNumber == 7) {
                         isClickable = isAdmin || params.row.labor?.memNum == memNum || params.row.member?.memNum == memNum || (parentPost && parentPost?.member?.memNum == memNum);
                     } else if (boardNumber == 8) {
@@ -249,12 +249,6 @@ function CounselingList(props) {
                 getRowId={(row) => row.postNum}
                 hideFooter={true}
             />
-            <Snackbar
-                open={open}
-                autoHideDuration={2000}
-                onClose={() => setOpen(false)}
-                message="게시글을 지웠습니다."
-            />
             <NewPost onClick={() => navigate('/csl/new', {state: { mode: "create", boardNum}})}>
                 등록
             </NewPost>
@@ -274,7 +268,7 @@ function CounselingList(props) {
 
 const StyledDataGrid = styled(DataGrid)`
   & .MuiDataGrid-columnHeader {
-    background-color: #ececec;
+    background-color: #E7DDFAFF;
   }
   & .MuiDataGrid-cell {
     background-color:white ;

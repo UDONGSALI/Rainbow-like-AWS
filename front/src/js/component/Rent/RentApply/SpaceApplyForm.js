@@ -35,14 +35,24 @@ function SpaceApplyForm({onSelectdInfo}) {
             try {
                 const response = await fetch(SERVER_URL + 'rent');
                 const data = await response.json();
-                // console.log('Raw Data:', data);
-                setRent((prevRent) => [...prevRent, ...data]); // 이전 상태를 기반으로 업데이트
+
+                // 데이터를 수정하여 reservationDate 및 reservationTime을 포함시킵니다.
+                const modifiedData = data.map((item) => ({
+                    ...item,
+                    reservationDate: item.rentStdt.split('T')[0],
+                    reservationTime: {
+                        start: item.rentStdt.split('T')[1],
+                        end: item.rentEddt.split('T')[1],
+                    },
+                }));
+
+                console.log('수정된 데이터:', modifiedData);
+                setRent((prevRent) => [...prevRent, ...modifiedData]);
             } catch (error) {
                 alert('대관 장소 정보를 찾을 수 없습니다!');
                 console.error(error);
             }
         };
-
         // 컴포넌트 마운트될 때 한 번만 실행
         fetchRentHist();
     }, []);
@@ -72,7 +82,32 @@ function SpaceApplyForm({onSelectdInfo}) {
         } else {
             setSelectedDate(selectedDate);  // 선택된 날짜를 업데이트
         }
+
     };
+    console.log(selectedDate);
+
+    const isTimeAlreadyReserved = (spaceName, selectedDate, selectedTime) => {
+        const reservedTimes = rent.map((reservation) => ({
+            reservationDate: reservation.reservationDate,
+            reservationTime: {
+                start: reservation.reservationTime.start,
+                end: reservation.reservationTime.end,
+            },
+            spaceName: reservation.space.spaceName,
+        }));
+
+        // 선택한 날짜와 시간이 이미 예약되었는지 확인
+        const isReserved = reservedTimes.some(
+            (reservation) =>
+                reservation.spaceName === spaceName &&
+                reservation.reservationDate === selectedDate &&
+                reservation.reservationTime.start <= selectedTime &&
+                reservation.reservationTime.end >= selectedTime
+        );
+
+        return isReserved;
+    };
+
 
     // 시간 배열 관련
     const times = Array(18)
@@ -114,22 +149,7 @@ function SpaceApplyForm({onSelectdInfo}) {
     };
 
 
-    const isTimeAlreadyReserved = (spaceName, selectedTime) => {
-        // setRent에서 대관 정보를 가져오고, 해당 장소에 대한 예약된 시간을 추출
-        const reservedTimes = rent
-            .filter((reservation) => reservation.spaceName === spaceName)
-            .map((reservation) => {
-                // 대관 정보에서 'rentTime' 값을 기반으로 시작 시간과 종료 시간을 계산
-                const [num, unit] = reservation.rentTime.split('/');
-                const duration = parseInt(num);
-                const startTime = reservation.time;
-                const endTime = addTime(startTime, unit, duration);
-                return generateTimeRange(startTime, endTime);
-            })
-            .flat();
 
-        return reservedTimes.includes(selectedTime);
-    };
     // 시간 선택 관련
     const handleSelectTime = (spaceName, time) => {
         if (!selectedDate) {
@@ -138,6 +158,7 @@ function SpaceApplyForm({onSelectdInfo}) {
         }
 
         const currentDateIndex = convertTimeToIndex(currentTime);
+
 
         // Check if the selected date is the same as the current date
         const selectedDateIndex = convertTimeToIndex(selectedDate);
@@ -152,10 +173,13 @@ function SpaceApplyForm({onSelectdInfo}) {
             }
         }
 
-
         // 예약된 시간인지 확인
-        if (isTimeAlreadyReserved(spaceName, time)) {
+        const isAlreadySelected = selectedTimes[spaceName]?.includes(time);
+
+        if (isTimeAlreadyReserved(spaceName, selectedDate, time)) {
             alert('이미 예약된 시간입니다. 다른 시간을 선택해주세요.');
+        } else if (isAlreadySelected) {
+            alert('이미 선택된 시간입니다. 다른 시간을 선택해주세요.');
         } else {
             const existingSelectedTimes = selectedTimes[spaceName] || [];
             let selectedTimeRange = [...existingSelectedTimes];
@@ -180,9 +204,6 @@ function SpaceApplyForm({onSelectdInfo}) {
                 // 시작 시간과 종료 시간 추출
                 const startTime = sortedTimeRange[0];
                 const endTime = sortedTimeRange[sortedTimeRange.length - 1];
-
-                // "시작 시간 ~ 종료 시간" 형식으로 표시
-                // console.log(`선택한 정보: ${selectedDate}, ${spaceName}, ${startTime} ~ ${endTime}`);
 
                 // 선택된 정보를 로그에 출력
                 const selectedInfo = {
@@ -240,6 +261,11 @@ function SpaceApplyForm({onSelectdInfo}) {
     };
 
 
+    // 예약된 공간만 필터링
+    const reservedSpaces = spaces.filter((space) =>
+        rent.some((reservation) => reservation.spaceName === space.spaceName)
+    );
+
 
 
     useEffect(() => {
@@ -254,6 +280,8 @@ function SpaceApplyForm({onSelectdInfo}) {
                 setLoadingSpaces(false);
             });
     }, []);
+
+
 
 
     //Space 목록
@@ -388,10 +416,10 @@ function SpaceApplyForm({onSelectdInfo}) {
             renderCell: (params) => (
                 <div style={{margin: 0, padding: 0, width: "100%"}}>
                     <div style={{margin: 0, padding: 0, width: "100%", position: "relative"}}>
+                        <div style={{marginLeft:"5px",marginBottom:"1%"}}><b style={{fontSixe:"20px"}}>대관일자 ㅣ</b>{selectedDate}</div>
                         {/* 시간 선택 버튼들을 표시 */}
                         {timesRows.map((row, rowIndex) => (
-                            <div style={{margin: 0, padding: 0, width: "100%"}}
-                                 key={rowIndex}>
+                            <div style={{ margin: 0, padding: 0, width: "100%" }} key={rowIndex}>
                                 {row.map((time) => (
                                     <button
                                         key={time}
@@ -405,21 +433,23 @@ function SpaceApplyForm({onSelectdInfo}) {
                                             fontSize: '12px',
                                             border: '1px solid #cccccc',
                                             backgroundColor: selectedTimes[params.row.spaceName]?.includes(time)
-                                                ? "#c9abf5"
-                                                : isTimeAlreadyReserved(params.row.spaceName, time)
-                                                    ? "lightgray"
-                                                    : "white",
-                                            cursor: isTimeAlreadyReserved(params.row.spaceName, time)
-                                                ? "not-allowed"
-                                                : "pointer",
+                                                ? "#c9abf5" // Selected time
+                                                : isTimeAlreadyReserved(params.row.spaceName, selectedDate, time)
+                                                    ? "lightgray" // Reserved time
+                                                    : "white", // Available time
+                                            cursor: isTimeAlreadyReserved(params.row.spaceName, selectedDate, time) ? "not-allowed" : "pointer",
                                         }}
-                                        disabled={isTimeAlreadyReserved(params.row.spaceName, time)}
+                                        disabled={
+                                            isTimeAlreadyReserved(params.row.spaceName, selectedDate, time) ||
+                                            selectedTimes[params.row.spaceName]?.includes(time)
+                                        }
                                     >
                                         {time}
                                     </button>
                                 ))}
                             </div>
                         ))}
+
                     </div>
 
                     <div style={{margin: 0, padding: "10px", width: "100%"}}>
@@ -472,22 +502,19 @@ function SpaceApplyForm({onSelectdInfo}) {
                 {loadingSpaces ? (
                     <p>Loading....</p>
                 ) : (
-                    <DataGrid className="spaceList"
-                              HeadersVisibility="None"
-                              columns={columns}
-                              rows={lists}
-                              getRowId={(params) => params.id}
-                              style={{
-                                  position: "relative",
-                                  width: "100%",
-                                  borderRadius: "5px"
-                              }}
-
-
-                              hideFooter={true}
-                              rowHeight={400}
-
-
+                    <DataGrid
+                        className="spaceList"
+                        HeadersVisibility="None"
+                        columns={columns}
+                        rows={lists}
+                        getRowId={(params) => params.id}
+                        style={{
+                            position: "relative",
+                            width: "100%",
+                            borderRadius: "5px"
+                        }}
+                        hideFooter={true}
+                        rowHeight={400}
                     />
 
                 )}

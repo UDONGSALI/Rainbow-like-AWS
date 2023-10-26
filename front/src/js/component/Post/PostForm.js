@@ -4,28 +4,30 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { SERVER_URL } from "../Common/constants";
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from "react-quill";
-import {post} from "axios";
 
 function PostForm(props) {
     const { parentsNum: parentsNumFromURL } = useParams();
+    const { postNum: postNumFromParams } = useParams();
+    // 게시글 번호 상태 (props로부터 가져올 수도 있고, URL로부터 가져올 수도 있음)
+    const [postNum, setPostNum] = useState(props.postNum || postNumFromParams);
+    // 현재 위치에 따라 "create", "edit" 또는 "reply" 모드 결정
     const location = useLocation();
-    const mode = location.state?.mode || 'create';  // "create" 또는 "edit", or "reply"
+    const mode = location.state?.mode || 'create';
+    // 현재 게시판 모드를 설정 (생성, 편집, 답글)
     const [isEditMode, setIsEditMode] = useState(mode === 'edit');
     const [isReplyMode, setIsReplyMode] = useState(mode === 'reply');
-
-    const { postNum: postNumFromParams } = useParams();
-    const postNum = props.postNum || postNumFromParams;
-
+    // 게시판 번호 (location.state에서 가져옴)
     const boardNum = location.state?.boardNum;
     const navigate = useNavigate();
     const memId = sessionStorage.getItem("memId");
     const [member, setMember] = useState([]);
     const [content, setContent] = React.useState('');
+    // 연결된 파일 번호 리스트
     const [filesNumbers, setFilesNumbers] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [retryCount, setRetryCount] = useState(0);
     const [imageLoading, setImageLoading] = useState(false);
+    // 파일의 SRC와 번호를 매핑한 객체
     const [fileSrcToNumberMap, setFileSrcToNumberMap] = useState({});
+    // 폼 데이터 상태 (게시글 정보 초기화)
     const [formData, setFormData] = useState({
         memNum: '',
         boardNum: location.state?.boardNum || '',
@@ -34,11 +36,12 @@ function PostForm(props) {
         pageView: 0,
         parentsNum: '',
         memName:'',
+        postNum:'',
         email:'',
         phone:'',
         delYN: 'N'
     });
-
+console.log(content)
     useEffect(() => {
         // 회원 정보 가져오기
         fetch(SERVER_URL + `members/id/${memId}`)
@@ -83,7 +86,7 @@ function PostForm(props) {
                 });
         }
 
-        // 답글 모드일 때
+        // 글 정보 가져오기 (답글 모드일 때)
         if (isReplyMode) {
             setFormData(prevFormData => ({
                 ...prevFormData,
@@ -92,13 +95,13 @@ function PostForm(props) {
         }
 
     }, [postNum, isEditMode, isReplyMode]);
-
+// 폼의 input 값 변경 핸들러
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
-
+// Quill 에디터의 컨텐츠 변경 핸들러 (이미지 태그가 제거될 경우 관련 파일 번호도 제거)
     const handleQuillChange = (contentValue) => {
         setContent(contentValue);
         setFormData(prevState => ({ ...prevState, content: contentValue }));
@@ -120,15 +123,30 @@ function PostForm(props) {
             return { ...prevMap };
         });
     };
-
+// 게시글 제출 핸들러
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (isEditMode && postNum) {
+            setFormData(prevFormData => {
+                const updatedFormData = {
+                    ...prevFormData,
+                    postNum: postNum // 이미 있는 postNum을 사용
+                };
+                processSubmission(updatedFormData, true); // 새로운 함수로 분리
+                return updatedFormData;
+            });
+        } else {
+            processSubmission(formData, isEditMode);
+        }
+    };
+// 실제 게시글 데이터를 서버에 전송하는 로직
+    const processSubmission = async (dataToSubmit, isEdit) => {
         let endpoint;
         let method;
 
-        if (isEditMode) {
-            endpoint = `${SERVER_URL}post/edit/${postNum}`;
+        if (isEdit) {
+            endpoint = `${SERVER_URL}post/edit/${dataToSubmit.postNum}`;
             method = 'PUT';
         } else {
             endpoint = `${SERVER_URL}post/new`;
@@ -141,7 +159,7 @@ function PostForm(props) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(dataToSubmit),
             });
 
             if (!response.ok) {
@@ -149,6 +167,11 @@ function PostForm(props) {
             }
 
             const data = await response.json();
+
+            if (!isEditMode) {
+                const newPostNumber = data.postNum;
+                setPostNum(newPostNumber);
+            }
 
             if (isEditMode) {
                 alert('게시글을 수정했습니다.');
@@ -180,8 +203,7 @@ function PostForm(props) {
             console.error('Error:', error);
         }
     };
-
-
+    //리다이렉션 핸들러
     const handleRedirect = () => {
         if (boardNum == 1 || boardNum == 2) {
             navigate(`/post/${boardNum}`);
@@ -194,7 +216,7 @@ function PostForm(props) {
             navigate(-1);
         }
     };
-
+// Quill 에디터에 이미지를 삽입하는 함수
     function insertToEditor(url) {
         if (quillRef.current) {
             const editor = quillRef.current.getEditor();
@@ -202,38 +224,7 @@ function PostForm(props) {
             editor.insertEmbed(range ? range.index : 0, 'image', url);
         }
     }
-
-    function checkImageAvailability(urls) {
-        const maxRetries = 5;
-        let failedUrls = [];
-
-        setLoading(true);
-
-        urls.forEach(url => {
-            fetch(url)
-                .then(response => {
-                    if (response.ok && !loading) {
-                        insertToEditor(url);
-                    } else {
-                        failedUrls.push(url);
-                    }
-                })
-                .catch(() => {
-                    failedUrls.push(url);
-                })
-                .finally(() => {
-                    if (failedUrls.length && retryCount < maxRetries) {
-                        setTimeout(() => {
-                            setRetryCount(prevRetry => prevRetry + 1);
-                            checkImageAvailability(failedUrls);
-                        }, 300);
-                    } else {
-                        setLoading(false);
-                    }
-                });
-        });
-    }
-
+    // Quill 에디터의 이미지 업로드 핸들러
     function imageHandler() {
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
@@ -283,8 +274,10 @@ function PostForm(props) {
                     });
                     setFileSrcToNumberMap(prevMap => ({ ...prevMap, ...newFileSrcToNumberMap }));
 
-                    setLoading(true);
-                    checkImageAvailability(urlsForFiles);
+                    // 이미지 삽입
+                    urlsForFiles.forEach(url => {
+                        insertToEditor(url);
+                    });
                 })
                 .catch(error => {
                     console.error("There was a problem with the fetch operation:", error.message);
@@ -294,7 +287,7 @@ function PostForm(props) {
                 });
         };
     }
-
+//Quill 에디터 설정 modules & formats
     const modules = useMemo(() => {
         return {
             toolbar: {
@@ -309,7 +302,6 @@ function PostForm(props) {
             },
         };
     }, []);
-
     const formats = [
         'header',
         'bold',
@@ -398,3 +390,4 @@ function PostForm(props) {
     );
 }
 export default PostForm;
+

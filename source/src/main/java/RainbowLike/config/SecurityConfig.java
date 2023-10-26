@@ -70,7 +70,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 배포한 프론트 엔드 주소의 요청을 허용합니다.
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(Arrays.asList(
-                "http://rainbow-like.com"
+                "http://rainbow-like.com",
+                "https://rainbow-like.com"
         ));
 
 

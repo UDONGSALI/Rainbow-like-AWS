@@ -154,7 +154,7 @@ public class MemberService implements UserDetailsService {
         memberRepository.delete(member);
     }
 
-//    @PostConstruct
+    @PostConstruct
     private void createDefaultMembers() {
         List<MemberDto> memberDtoList = MemberDto.createtestMember();
         for (MemberDto memberDto : memberDtoList) {

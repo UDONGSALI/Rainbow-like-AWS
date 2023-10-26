@@ -461,6 +461,13 @@ public class DefaultFileService {
 
         fileList.add(post29File1);
 
+        File post30File1 = new File();
+        post30File1.setPost(postRepository.findByPostNum(47L));
+        post30File1.setFileName("post/47/KakaoTalk_20231011_182459375.jpg");
+        post30File1.setFileOriName("KakaoTalk_20231011_182459375.jpg");
+        post30File1.setFileUri("https://storage.googleapis.com/rainbow_like/post/47/KakaoTalk_20231011_182459375.jpg");
+
+        fileList.add(post30File1);
 
         // 교육 내역 관련
 

@@ -66,9 +66,16 @@ public class PostFormDto {
         Member member1 = new Member();
         Member member2 = new Member();
         Member member3 = new Member();
+        Member member4 = new Member();
+        Member member5 = new Member();
+        Member member6 = new Member();
+
         member1.setMemNum(1L);
         member2.setMemNum(2L);
         member3.setMemNum(3L);
+        member4.setMemNum(6L);
+        member5.setMemNum(7L);
+        member6.setMemNum(8L);
 
 
 
@@ -110,7 +117,7 @@ public class PostFormDto {
 
         PostFormDto post4 = new PostFormDto();
         post4.setBoard(board2);
-        post4.setMember(member1);
+        post4.setMember(member4);
         post4.setTitle("상담 테스트 게시글 1");
         post4.setContent("상담 테스트 게시글 본문 1");
         post4.setWriteDate(LocalDateTime.now());
@@ -119,10 +126,9 @@ public class PostFormDto {
         post4.setDelYN(DelYN.N);
         postList.add(post4);
 
-
         PostFormDto post5 = new PostFormDto();
         post5.setBoard(board2);
-        post5.setMember(member2);
+        post5.setMember(member6);
         post5.setTitle("상담 테스트 게시글 2");
         post5.setContent("상담 테스트 게시글 본문 2");
         post5.setWriteDate(LocalDateTime.now());
@@ -255,7 +261,7 @@ public class PostFormDto {
 
         PostFormDto post18 = new PostFormDto();
         post18.setBoard(board5);
-        post18.setMember(member2);
+        post18.setMember(member4);
         post18.setTitle("노무사 게시판 유저 글1 입니다.");
         post18.setLabor(member3);
         post18.setContent("노무사 게시판 내용 입니다.");
@@ -267,7 +273,7 @@ public class PostFormDto {
 
         PostFormDto post19 = new PostFormDto();
         post19.setBoard(board5);
-        post19.setMember(member2);
+        post19.setMember(member5);
         post19.setTitle("노무사 게시판 유저 글2 입니다.");
         post19.setContent("노무사 게시판 내용2 입니다.");
         post19.setConselStatus(Status.WAIT);
@@ -447,6 +453,17 @@ public class PostFormDto {
         post35.setPageView(0);
 
         postList.add(post35);
+
+        PostFormDto post36 = new PostFormDto();
+        post36.setBoard(board5);
+        post36.setMember(member4);
+        post36.setTitle("노무사 게시판 이미지 있는 글 입니다.");
+        post36.setContent("<p><img src=\"https://storage.googleapis.com/rainbow_like/post/47/KakaoTalk_20231011_182459375.jpg\"></p><p><br></p><p>노무사 게시판 이미지 있는 게시글 이에영</p>");
+        post36.setConselStatus(Status.WAIT);
+        post36.setWriteDate(LocalDateTime.now());
+        post36.setPageView(0);
+
+        postList.add(post36);
 
         return postList;
     }
