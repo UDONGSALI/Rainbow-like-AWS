@@ -1,1 +1,1 @@
-http://rainbow-like.com/
+https://rainbow-like.com/
