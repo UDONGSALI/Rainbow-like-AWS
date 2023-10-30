@@ -11,6 +11,7 @@ import com.google.cloud.storage.StorageOptions;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +33,7 @@ public class FileService {
     private final PostRepository postRepository;
     private final RestTemplate restTemplate;
     private final SpaceRepository spaceRepository;
+    private final ResourceLoader resourceLoader;
 
     @Value("${spring.cloud.gcp.storage.bucket}")
     private String bucketName;
@@ -79,7 +81,7 @@ public class FileService {
     public void deleteFilesByEduNum(Long eduNum) {
         Iterable<File> files = findFilesByEduNum(eduNum);
         for (File file : files) {
-            String deleteUrl = "http://localhost:8090/api/files/" + file.getFileNum();
+            String deleteUrl = "http://rainbow-like-env.eba-ipms93ww.ap-northeast-2.elasticbeanstalk.com/api/files/" + file.getFileNum();
             restTemplate.delete(deleteUrl);
         }
     }
@@ -87,14 +89,7 @@ public class FileService {
         PathAndEntities pathAndEntities = determineMidPath(tableName, number);
 
         // Set up Google Cloud Storage
-        ClassPathResource resource = new ClassPathResource("rainbow-like-6e3171ac1695.json");
-        GoogleCredentials credentials = GoogleCredentials.fromStream(resource.getInputStream());
-        String projectId = "rainbow-like";
-        Storage storage = StorageOptions.newBuilder()
-                .setProjectId(projectId)
-                .setCredentials(credentials)
-                .build()
-                .getService();
+        Storage storage = StorageOptions.getDefaultInstance().getService();
 
         List<Long> uploadedFileNums = new ArrayList<>();
 

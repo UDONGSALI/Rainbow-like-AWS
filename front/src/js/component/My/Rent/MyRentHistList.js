@@ -81,7 +81,7 @@ export default function MyRentHistList() {
 
 
     const handleDelete = async (rentHistNum) => {
-        const isSuccess = await deleteItem('rent/' + rentHistNum, "취소");
+        const isSuccess = await deleteItem(`rent/ + ${rentHistNum}`, "취소");
 
         if (isSuccess) {
             const updatedRows = rentHists.filter(row => row.rentHistNum !== rentHistNum);
@@ -256,7 +256,7 @@ export default function MyRentHistList() {
                             borderRadius: '5px',
                             fontSize: "13px",
                             fontWeight: "bold",
-                }}
+                        }}
                 >
                     취소
                 </button>
