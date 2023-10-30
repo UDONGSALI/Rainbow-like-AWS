@@ -16,6 +16,7 @@ import net.nurigo.sdk.message.service.DefaultMessageService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,8 +28,11 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 public class SmsService {
-    private final String apiKey = "NCSB52VZNJWSSRPP";
-    private final String apiSecret = "KNLBRR4PSHSL7QERAHM2SD6WQMNK3VZ4";
+
+
+    private final String apiKey;
+
+    private final String apiSecret;
 
     private final DefaultMessageService messageService;
     @Autowired
@@ -48,7 +52,10 @@ public class SmsService {
 
     private final Map<String, String> phoneVerificationMap = new HashMap<>();
 
-    public SmsService() {
+    @Autowired
+    public SmsService(@Value("${SMS_API_KEY}") String apiKey, @Value("${SMS_API_SECRET}") String apiSecret) {
+        this.apiKey = apiKey;
+        this.apiSecret = apiSecret;
         this.messageService = NurigoApp.INSTANCE.initialize(apiKey, apiSecret, "https://api.coolsms.co.kr");
     }
 

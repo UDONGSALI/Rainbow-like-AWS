@@ -29,6 +29,12 @@ public class RainbowLikeApplication implements CommandLineRunner {
     @Value("${GCP_CREDENTIALS}")
     private String gcpCredentials;
 
+    @Value("${SMS_API_KEY}")
+    private String apiKey;
+
+    @Value("${SMS_API_SECRET}")
+    private String apiSecret;
+
     public static void main(String[] args) {
         SpringApplication.run(RainbowLikeApplication.class, args);
     }
