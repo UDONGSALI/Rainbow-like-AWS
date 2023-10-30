@@ -62,7 +62,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({theme}) => ({
 
 //대관신청하기 버튼//
 function redirectToURL(){
-    window.location.href="http://localhost:3000/rent/status";
+    window.location.href="/rent/status";
 };
 
 

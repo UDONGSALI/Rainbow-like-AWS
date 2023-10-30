@@ -65,7 +65,7 @@ public class SmsService {
         Message message = new Message();
         message.setFrom("01075260231");
         message.setTo(to);
-        message.setText("[세종여성플라자] 신청하신 여성인재풀DB가 매칭되었습니다.\n신청하신 글을 확인해주세요.(로그인 후 확인 가능) " + "http://localhost:3000/ftc/" + ftcNum);
+        message.setText("[세종여성플라자] 신청하신 여성인재풀DB가 매칭되었습니다.\n신청하신 글을 확인해주세요.(로그인 후 확인 가능) " + "https://rainbow-like/ftc/" + ftcNum);
 
         SingleMessageSentResponse response = this.messageService.sendOne(new SingleMessageSendingRequest(message));
         return response;

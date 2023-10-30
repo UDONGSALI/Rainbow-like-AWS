@@ -293,7 +293,7 @@ export default function MemberInfoEdit() {
                 let text;
                 text = await response.text();
                 logout();
-                window.location.href = "http://localhost:3000/login";
+                window.location.href = "/login";
             } else {
                 const text = await response.text();
                 alert('회원 탈퇴 중 오류가 발생했습니다. 다시 시도해 주세요.');
